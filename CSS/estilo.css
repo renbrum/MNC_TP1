@@ -1,0 +1,119 @@
+body {
+	background-color: #FFFFFF;
+}
+
+#page_area{
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	border-right: thin solid #333;
+	background-color: #F0F0FF;
+	max-width: 1340px;
+	min-width: 1340px;
+	padding:15px;
+}
+
+#texto {
+	padding:5px;
+	background-color:transparent;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#formulario {
+	padding:15px 5px 5px;
+	background-color: #F9F9F9;
+	border: thin solid #09F;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:10pt;
+}
+
+.entrada_tabela{
+	font-family: "Lucida Console", Monaco, monospace;
+	width:100px;
+	font-size:10pt;
+}
+
+.entrada_tabela_res{
+	font-family: "Lucida Console", Monaco, monospace;
+	width:100px;
+	font-size:10pt;
+	background-color: #A4FFED
+}
+
+#tabela_variaveis{
+	position:relative;
+	left:104px;
+}
+
+#oti_combobox {
+	font-family: "Lucida Console", Monaco, monospace;
+	width:100px;
+}
+
+#spinner_var {
+	font-family: "Lucida Console", Monaco, monospace;
+	width:100px;
+}
+
+#spinner_rest {
+	font-family: "Lucida Console", Monaco, monospace;
+	width:100px;
+}
+
+#botaoRemoverTabelas{
+	color: #FF0000;
+}
+
+
+ #test{ 
+                    padding : 0px;
+                    color: white;
+                    background-color: #D699AD;
+                    border-style: solid;
+                    border-width: 2px;
+                    border-color: #8A2E2E;
+
+                }
+        #borda    { 
+                    display: none;
+                    color:green;
+                    border-style: solid;
+                    border-width: 3px;
+                    border-color: #7A0000;
+                }  
+
+
+#test2{ 
+                    padding : 0px;
+                    color: white;
+                    background-color: #D699AD;
+                    border-style: solid;
+                    border-width: 2px;
+                    border-color: #8A2E2E;
+
+                }
+        #borda    { 
+                    display: none;
+                    color:green;
+                    border-style: solid;
+                    border-width: 3px;
+                    border-color: #7A0000;
+                }  
+
+#test3{ 
+                    padding : 0px;
+                    color: white;
+                    background-color: #D699AD;
+                    border-style: solid;
+                    border-width: 2px;
+                    border-color: #8A2E2E;
+
+                }
+        #borda    { 
+                    display: none;
+                    color:green;
+                    border-style: solid;
+                    border-width: 3px;
+                    border-color: #7A0000;
+                } 
