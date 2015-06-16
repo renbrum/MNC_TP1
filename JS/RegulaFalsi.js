@@ -13,6 +13,7 @@ function RegulaFalsi(a, b, Toler, IterMax) {
     var FB;
     FB = f(b);
     var DELTAX=0;
+    var CondErro;
     if ((FA * FB) > 0) {
         document.write("Função não muda de sinal nos extremos dos intervalo dado");
     } else {
@@ -28,13 +29,18 @@ function RegulaFalsi(a, b, Toler, IterMax) {
                 a=x;
                 FA= FX;
             }else{
-                
-                
+                b=x;
+                FB=FX;
             }
+            Iter= Iter+1;
             
         }while((abs(DELTAX)>Toler && abs(FX)> Toler)|| Iter <IterMax)
-        
-        
+        Raiz =x;
+        if(abs(DELTAX)<= Toler && abs(FX)<=Toler){
+            CondErro =0;
+        }else{
+            CondErro=1;
+        }
         
         var c;
         c = a + b;
