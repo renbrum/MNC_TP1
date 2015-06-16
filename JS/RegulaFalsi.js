@@ -50,6 +50,5 @@ function RegulaFalsi(a, b, Toler, IterMax) {
 }
 
 function f(x) {
-    return x + 1;
-
+   
 }
