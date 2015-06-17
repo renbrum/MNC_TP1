@@ -12,6 +12,7 @@ function Pegaso(a,b,Toler,IterMax){
     var FX;
     var Iter;
     var DELTAX;
+    var x; var Raiz; var CondErro;
     FB = f(b);
     x=b; FX=FB; Iter =0;
     do{
@@ -19,15 +20,25 @@ function Pegaso(a,b,Toler,IterMax){
         x=x+DELTAX;
         FX=f(x);
         document.write("Iter" + Iter + "a" + a +"FA"+ FA + "b" + b+ "FB" + FB + "X" + x+ "FX" + FX + "DELTA X" + DELTAX );
+        if(FX*FB <0){
+        a=b;
+        FA=FB;
+        }else{
+            FA=FA*FB/(FB+FX);
+        }
+        b=x;
+        FB=FX;
+        Iter=Iter+1;
+         
         
     }while((abs(DELTAX)>Toler && abs(FX)>Toler)||Iter < IterMax)
-    if(FX*FB <0){
-    
-    
-    
-    }
-    
+    Raiz=x;
+    if(abs(DELTAX)<=Toler && abs(FX)<=Toler){
+        CondErro=0;       
+    }else{ CondErro=1;}
 }
+
+
 
 function f(x){
     
