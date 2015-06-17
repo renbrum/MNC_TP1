@@ -48,24 +48,26 @@ function desativarCamposFinais() {
 
 function inicializarTabelaCoeficientes(grau) {
     var table = document.getElementById("tabela_coeficientes");
-    var rowHeader = table.insertRow(0);
-    var rowData = table.insertRow(1);
+    var colunaHeader = table.insertCell(0);
+//    var rowHeader = table.insertRow(0);
+//    var rowData = table.insertRow(1);
     for (var i = 0; i <= grau; i++) {
-        addColunaCoef(i, rowHeader, rowData);
+//        addColunaCoef(i, rowHeader, rowData);
+        addColunaCoef(i, colunaHeader);
     }
 }
 
 
 
-function addColunaCoef(i, rowHeader, rowData) {
+function addColunaCoef(i, colunaHeader) {
     var textField = document.createElement("input");
     textField.setAttribute("id", "x" + i);
     textField.setAttribute("class", "entrada_tabela");
     textField.setAttribute("type", "text");
     textField.setAttribute("onkeypress", "return event.charCode != 47 && (event.charCode >= 45 && event.charCode <= 57)");
 
-    var header = document.createElement("th");
-    rowHeader.appendChild(header);
+    var header = document.createElement("div");
+    colunaHeader.appendChild(header);
     header.innerHTML = "x" + i;
     header.setAttribute("class", "entrada_tabela");
 
@@ -73,7 +75,7 @@ function addColunaCoef(i, rowHeader, rowData) {
     var cell = document.createElement("td");
     cell.appendChild(textField);
 
-    rowData.appendChild(cell);
+    colunaHeader.appendChild(cell);
 }
 
 
@@ -85,12 +87,12 @@ function removerFuncao() {
 }
 
 
-function imprimirResultado(tabelaSimplex, base, solucao) {
+function imprimirResultado(funcao) {
     printPage();
     var div = document.getElementById('texto');
-    div.innerHTML = "<p>A tabela Simplex fica assim:</p>";
+    div.innerHTML = "<p>A função fica assim:</p>";
     div = document.getElementById('formulario');
-    div.appendChild(createTable(tabelaSimplex, base, solucao));
+    div.appendChild(createTable(funcao));
     var button = document.createElement("input");
     button.setAttribute("type", "button");
     button.setAttribute("onclick", "location.reload()");
