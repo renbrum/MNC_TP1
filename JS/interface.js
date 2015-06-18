@@ -1,6 +1,5 @@
 this.grau = 0;
 this.ponto = 0;
-teste = [[]];
 
 function gerarFuncao() {
     atualizarCampos();
@@ -81,27 +80,9 @@ function removerFuncao() {
     }
 }
 
-function imprimirResultado(funcao) {
-    printPage();
-    var div = document.getElementById('texto');
-    div.innerHTML = "<p>A função fica assim:</p>";
-    div = document.getElementById('formulario');
-    div.appendChild(createTable(funcao));
-    
-    var button = document.createElement("input");
-    button.setAttribute("type", "button");
-    button.setAttribute("onclick", "location.reload()");
-    button.setAttribute("value", "Voltar");
-    div.appendChild(button);
-}
-
-function printPage() {
-    var texto = document.getElementById("texto");
-    while (texto.firstChild) {
-        texto.removeChild(texto.firstChild);
-    }
-    texto = document.getElementById("formulario");
-    while (texto.firstChild) {
-        texto.removeChild(texto.firstChild);
-    }
-}
+function imprimirResultado() {
+    var div = document.getElementById('textoresultado');
+    div.innerHTML = "<p>y:</p>";
+    div = document.getElementById('valorresultado');
+    div.appendChild(div);
+};
