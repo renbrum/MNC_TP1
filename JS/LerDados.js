@@ -3,32 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+this.grau = 0;
+this.ponto = 0;
+this.coefFunc = [];
 
 function lerDados() {
     this.grau = parseInt(document.getElementById("grau").value);
     this.ponto = parseInt(document.getElementById("ponto").value);
     this.coefFunc = [];
-
-    this.coefVar = function() {
-        for (var i = this.grau; i >= 0; i--) {
-            this.coefFunc[i] = document.getElementById("x" + (this.grau)).value;
-        }
-    };
+    var cont = 0;
+    for (var i = this.grau; i >= 0; i--) {
+        this.coefFunc[cont] = parseFloat(document.getElementById("x" + i).value);
+        cont++;
+    }
 }
 
-function ler() {
+function Avaliar() {
     var leia = new lerDados();
     leia;
-    document.write("<br>"+ leia.grau +"<br>");
-    document.write("<br>"+ leia.coefFunc +"<br>");
-    document.write("<br>"+ leia.a +"<br>");
-    // for (var i = 0; i < leia.solucao.length; i++) {
-    // 	document.write("<br>"+ leia.tabelaSimplex[i] +"\t"+ leia.solucao[i] +"<br>");
-    // }
-    // document.write("<br>");
-    var iR = new IsolamentoDeRaizes(leia.grau, leia.coefFunc, leia.a);
-    iR.IsolamentoDeRaizes();
-    // document.write("<br>"+ sDual.solucao +"<br>");
-    // document.write("<br>"+ sDual.variaveis +"<br>");
+    var solucao = AlgoritmoHorner(leia.grau, leia.coefFunc, leia.ponto);
+    imprimirResultado(leia.grau, leia.ponto, leia.coefFunc, solucao);
+//    Setando Dados
+//    var solucao = AlgoritmoHorner(leia.grau, leia.coefFunc, leia.ponto);
+//    var grau = 5;
+//    var ponto = 2;
+//    var coefFunc = [3, -2, 5, 7, -3, 1];
+
 }
 
