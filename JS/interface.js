@@ -80,9 +80,14 @@ function removerFuncao() {
     }
 }
 
-function imprimirResultado() {
-    var div = document.getElementById('textoresultado');
-    div.innerHTML = "<p>y:</p>";
-    div = document.getElementById('valorresultado');
-    div.appendChild(div);
-};
+function imprimirResultado(grau, ponto, coefFunc, y) {
+    document.write("<br>Grau: " + grau);
+    document.write("<br>Ponto: " + ponto);
+    document.write("<br>C:[");
+    for (var i = 0; i < coefFunc.length; i++) {
+            document.write(coefFunc[i] + "\t");
+    }
+    document.write("]");
+    document.write("<br>y: " + y);
+}
+;
