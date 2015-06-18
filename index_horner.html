@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>Grupo 6 - MNC</title>
+        <script src="JS/LerDados.js"></script>
+        <script src="JS/AlgoritmoHorner.js"></script>
         <script src="JS/interface.js"></script>
-        <script src="JS/isolamentoDeRaizes.js"></script>
         <link rel="stylesheet" href="CSS/estilo.css"></link>
         <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -41,7 +42,9 @@
 
                     <input id="botaoAvaliar" value="Avaliar" type="button" onclick="ler()" />
                 </form>
-
+                <form id="textoresultado">
+                <div id="valoresultado"></div>
+                </form>
                 <form id="dados_entrada" action = "index.html">
                     <input type="submit" value = "Voltar ao início">
                 </form>
