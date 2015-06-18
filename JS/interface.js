@@ -69,7 +69,6 @@ function addColunaCoef(i, linhaTabela) {
         linhaTabela.appendChild(textField);
         linhaTabela.appendChild(header);
     }
-
 }
 
 
@@ -85,7 +84,7 @@ function imprimirResultado(grau, ponto, coefFunc, y) {
     document.write("<br>Ponto: " + ponto);
     document.write("<br>C:[");
     for (var i = 0; i < coefFunc.length; i++) {
-            document.write(coefFunc[i] + "\t");
+        document.write(coefFunc[i] + "\t");
     }
     document.write("]");
     document.write("<br>y: " + y);
