@@ -1,4 +1,3 @@
-
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,6 +6,7 @@
 
 function lerDados() {
     this.grau = parseInt(document.getElementById("grau").value);
+    this.ponto = parseInt(document.getElementById("ponto").value);
     this.coefFunc = [];
 
     this.coefVar = function() {
@@ -18,7 +18,7 @@ function lerDados() {
 
 function ler() {
     var leia = new lerDados();
-    leia.lerFunc();
+    leia;
     document.write("<br>"+ leia.grau +"<br>");
     document.write("<br>"+ leia.coefFunc +"<br>");
     document.write("<br>"+ leia.a +"<br>");

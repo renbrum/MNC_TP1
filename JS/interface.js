@@ -1,12 +1,12 @@
-grau = 1;
+this.grau = 0;
+this.ponto = 0;
 teste = [[]];
 
 function gerarFuncao() {
     atualizarCampos();
     esvaziarTabelas();
     desativarCamposIniciais();
-    inicializarTabelaCoeficientes(grau);
-    // adicionarLinhas(numberOfRestrictions);
+    inicializarTabelaCoeficientes();
 }
 
 function esvaziarTabelas() {
@@ -17,11 +17,11 @@ function esvaziarTabelas() {
 }
 
 function atualizarCampos() {
-    grau = document.getElementById("grau").value;
-    if (grau > 10) {
-        grau = 10;
-    } else if (grau < 0) {
-        grau = 0;
+    this.grau = document.getElementById("grau").value;
+    if (this.grau > 10) {
+        this.grau = 10;
+    } else if (this.grau < 0) {
+        this.grau = 0;
     }
 }
 
@@ -30,52 +30,47 @@ function desativarCamposIniciais() {
     document.getElementById("botaoGerarFuncao").disabled = true;
     document.getElementById("botaoRemoverFuncao").disabled = false;
     document.getElementById("botaoAvaliar").disabled = false;
-    /*document.getElementById("fileUpload").disabled = true;
-     document.getElementById("upload").disabled = true;*/
-    /*document.getElementById("botaoSalvarArquivo").disabled = false;*/
 }
 
 function desativarCamposFinais() {
     document.getElementById("grau").disabled = false;
     document.getElementById("botaoGerarFuncao").disabled = false;
     document.getElementById("botaoAvaliar").disabled = false;
-    // document.getElementById("fileUpload").disabled = false;
-    // document.getElementById("upload").disabled = false;
-    // document.getElementById("botaoSalvarArquivo").disabled = true;
-
-    //desativarCamposIniciais();
 }
 
-function inicializarTabelaCoeficientes(grau) {
+function inicializarTabelaCoeficientes() {
     var table = document.getElementById("tabela_coeficientes");
-    var colunaHeader = table.insertCell(0);
-//    var rowHeader = table.insertRow(0);
-//    var rowData = table.insertRow(1);
-    for (var i = 0; i <= grau; i++) {
-//        addColunaCoef(i, rowHeader, rowData);
-        addColunaCoef(i, colunaHeader);
+    var linhaTabela = table.insertRow(0);
+    for (var i = this.grau; i >= 0; i--) {
+        addColunaCoef(i, linhaTabela, this.grau);
     }
+
 }
 
+function addColunaCoef(i, linhaTabela) {
 
-
-function addColunaCoef(i, colunaHeader) {
     var textField = document.createElement("input");
     textField.setAttribute("id", "x" + i);
     textField.setAttribute("class", "entrada_tabela");
     textField.setAttribute("type", "text");
     textField.setAttribute("onkeypress", "return event.charCode != 47 && (event.charCode >= 45 && event.charCode <= 57)");
+    var header = document.createElement("td");
+    if (i > 0) {
+        if (i > 0 && i < 2) {
+            header.innerHTML = "x";
+            linhaTabela.appendChild(textField);
+            linhaTabela.appendChild(header);
+        } else {
+            header.innerHTML = "x" + i;
+            linhaTabela.appendChild(textField);
+            linhaTabela.appendChild(header);
+        }
+    }
+    else {
+        linhaTabela.appendChild(textField);
+        linhaTabela.appendChild(header);
+    }
 
-    var header = document.createElement("div");
-    colunaHeader.appendChild(header);
-    header.innerHTML = "x" + i;
-    header.setAttribute("class", "entrada_tabela");
-
-
-    var cell = document.createElement("td");
-    cell.appendChild(textField);
-
-    colunaHeader.appendChild(cell);
 }
 
 
@@ -86,13 +81,13 @@ function removerFuncao() {
     }
 }
 
-
 function imprimirResultado(funcao) {
     printPage();
     var div = document.getElementById('texto');
     div.innerHTML = "<p>A função fica assim:</p>";
     div = document.getElementById('formulario');
     div.appendChild(createTable(funcao));
+    
     var button = document.createElement("input");
     button.setAttribute("type", "button");
     button.setAttribute("onclick", "location.reload()");

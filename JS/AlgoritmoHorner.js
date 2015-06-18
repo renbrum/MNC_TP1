@@ -5,6 +5,13 @@
  */
 this.y = 0;
 
+function AlgotimoHorner(grau, coefFunc, a) {
+    this.y = coefFunc[grau];
+    for (var i = 0; i <= grau; i++) {
+        this.y = (y * a) + coefFunc[i];
+    }
+    document.write(this.y);
+}
 
 function lerDados() {
     this.grau = parseInt(document.getElementById("grau").value);
@@ -15,14 +22,6 @@ function lerDados() {
             this.coefFunc[i] = document.getElementById("x" + (this.grau)).value;
         }
     };
-}
-
-function AlgotimoHorner(grau, coefFunc, a) {
-    this.y = coefFunc[grau];
-    for (var i = 0; i <= grau; i++) {
-        this.y = (y * a) + coefFunc[i];
-    }
-    document.write(this.y);
 }
 
 function ler() {
