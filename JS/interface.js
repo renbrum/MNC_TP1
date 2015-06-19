@@ -89,4 +89,17 @@ function imprimirResultado(grau, ponto, coefFunc, y) {
     document.write("]");
     document.write("<br>y: " + y);
 }
+function imprimirResultadoLR(grau, coefFunc, l) {
+    document.write("<br>Grau: " + grau);
+    document.write("<br>c = [");
+    for (var i = 0; i < coefFunc.length; i++) {
+        document.write(coefFunc[i] + "\t");
+    }
+    document.write("]");
+    document.write("<br>L = [");
+    for (var i = 0; i < l.length; i++) {
+        document.write(l[i] + "\t");
+    }
+    document.write("]");
+}
 ;
