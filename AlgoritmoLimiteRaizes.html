@@ -1,0 +1,57 @@
+<html>
+
+    
+        <meta charset="UTF-8">
+        <title>Grupo 6 - MNC</title>
+        <script src="JS/LerDados.js"></script>
+        <script src="JS/AlgoritmoHorner.js"></script>
+        <script src="JS/interface.js"></script>
+        <link rel="stylesheet" href="CSS/estilo.css">
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        -->
+    
+
+    <body>
+        <div id="page_area">
+            <div id="texto">
+                <p id="p1">ISOLAMENTO DE RAÍZES</p>
+                <p>Algoritimo de Limite de Raízes</p>
+                <p>Achar os limites das raízes reais de uma equeção polinomial.</p>
+            </div>  
+            <div id="formulario">
+                <form id="dados_entrada">
+                    <!-- <input type="file" id="fileUpload" />
+                        <input type="button" id="upload" value="Upload" onclick="Upload()" /> -->
+                    <hr />
+
+                    <!-- &emsp;Sentido: <select id="oti_combobox">
+                    <option value="2" selected>MIN</option>
+                    <option value="1">MAX</option>
+                    </select> -->
+
+                    &emsp;Grau: <input id="grau" type="number" min="0" max="10" step="1" value="4"/>
+                    &emsp;<input id="botaoGerarFuncao" type="button" value="Gerar Função" onclick="gerarFuncao()"/>
+                    &emsp;<input id="botaoRemoverFuncao" type="button" value="Remover Função" onclick="removerFuncao()" disabled/>
+                    
+                    <!-- &emsp;<input id="botaoSalvarArquivo" type="button" value="Salvar Tabelas de Entrada" onclick="salvar()" disabled/><br><br> -->
+                    <table id="tabela_coeficientes">
+                    </table>
+                    <br>
+
+                    <input id="botaoAvaliar" value="Avaliar" type="button" onclick="AvaliarLR()" />
+                </form>
+                <form id="textoresultado">
+                <div id="valoresultado"></div>
+                </form>
+                <form id="dados_entrada" action = "index.html">
+                    <input type="submit" value = "Voltar ao início">
+                </form>
+
+            </div>
+
+        </div>
+    </body>
+
+</html>
+
