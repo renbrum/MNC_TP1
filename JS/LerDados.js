@@ -43,7 +43,7 @@ function AvaliarLR() {
 //    var leia = new lerDadosLR();
     this.grau = 4;
     this.coefFunc = [1, 2, -13, -14, 24];
-    var solucao = AlgoritmoLimiteRaizes(leia.grau, leia.coefFunc);
+    var solucao = AlgoritmoLimitesRaizes(this.grau, this.coefFunc);
     imprimirResultadoLR(this.grau, this.coefFunc, solucao);
 //    L = 0.6316    4.7417  -14.0000 -0.5760
 //    var leia = new lerDados();

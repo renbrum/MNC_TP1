@@ -3,81 +3,83 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+this.c1 = 0;
 this.k = 0;
 this.b = 0;
 this.l = 0;
 this.Aux = 0;
-function limitesRaizes(grau, coefFunc) {
-    var grau1 = parseFloat(grau);
-    if (0 === grau) {
-        alert("Coeficiente c(1) nulo.");
+this.t = 0;
+function AlgoritmoLimitesRaizes(grau, coefFunc) {
+    grau = parseFloat(grau);
+    this.c1 = parseFloat(coefFunc[0]);
+
+    if (this.c1 === 0) {
+        document.write("Coeficiente c(1) nulo.");
+        document.write("abandone!!"); //ABANDONE ???
     }
-    var t = 0;
-    t = (parseFloat(grau) + 1);
+    this.t = (parseFloat(grau) + 1);
     coefFunc[(t + 1)] = 0;
-    var aux = 0;
-    aux = parseFloat(coefFunc[(t) + 1]);
+
+
+    var aux2 = 0;
+    var n1 = 0;
+    n1 = grau + 1;
+    aux2 = coefFunc[n1];
     //    repita
-    if (aux === 0) {
-        alert("Polinômio é deflacionado!");
-    }
+    do{
+        if (aux2 === 0) {
+            document.write("Polinômio é deflacionado!");
+        }
+        this.t = (this.t) - 1;
+    }while(!(coefFunc[this.t] !== 0));
     
-    if (coefFunc[t] !== 0) {
-        //        interrompa
-    }
     //    
     for (var i = 1; i < 4; i++) {
         if ((i === 2) || (i === 4)) {
             for (var j = 1; j < (t / 2); j++) {
                 this.Aux = coefFunc[j];
-                coefFunc[j] = coefFunc[(t - j) + 1];
-                coefFunc[(t - j) + 1] = Aux;
+                coefFunc[j] = coefFunc[(this.t - j) + 1];
+                coefFunc[(this.t - j) + 1] = this.Aux;
             }
         } else {
             if (i === 3) {
-                for (var j = 1; j < (t / 2); j++) {
-                    var Aux = coefFunc[j];
-                    coefFunc[j] = coefFunc[(t - j) + 1];
-                    coefFunc[(t - j) + 1] = Aux;
+                for (var j = 1; j < (this.t / 2); j++) {
+                    this.Aux = coefFunc[j];
+                    coefFunc[j] = coefFunc[(this.t - j) + 1];
+                    coefFunc[(this.t - j) + 1] = this.Aux;
                 }
-                for(j = (t-1);j<=1;j++){
+                for (j = (this.t - 1); j <= 1; j++) {
                     coefFunc[j] = -coefFunc[j];
-                    
+
                 }
             }
         }
-        if(coefFunc[0] < 0){
-            for(j = 1;j<=t;j++){
+        if (coefFunc[0] < 0) {
+            for (j = 1; j <= this.t; j++) {
                 coefFunc[j] = -coefFunc[j];
             }
         }
         this.k = 2;
-        // Repita        
-        if((coefFunc[k] < 0) || (k > t)){
-            break;
-        }
-        this.k = this.k + 1;
-        //
-        
-        if(k <= t){
-            this.b = 0;
-            for(j = 2; j <= t; j++){
-                if((coefFunc[k] < 0) || (abs(coefFunc[j]) > 0)){
-                    b = Math.abs(coefFunc[j]);
+        do{
+            this.k = this.k + 1;
+        }while(!((coefFunc[k] < 0) || (k > t)));
+
+
+        if (this.k <= this.t) {
+            for (j = 2; j <= this.t; j++) {
+                if ((coefFunc[this.k] < 0) || (abs(coefFunc[j]) > 0)) {
+                    this.b = Math.abs(coefFunc[j]);
                 }
             }
             var dsoma = 0;
-            dsoma = Math.pow(b/coefFunc[0], (1/ (this.k - 1)));
+            dsoma = Math.pow(this.b / coefFunc[0], (1 / (this.k - 1)));
             this.l[i] = 1 + dsoma;
-        }else{
-            this.l[i] = Math.pow(10,100);
-            
+        } else {
+            this.l[i] = Math.pow(10, 100);
         }
-
-
     }
     this.Aux = this.l[1];
-    this.l[i] = (1/this.l[2]);
+    this.l[i] = (1 / this.l[2]);
     this.l[2] = this.Aux;
     this.l[3] = -this.l[3];
     this.l[4] = -this.l[4];
