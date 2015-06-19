@@ -17,6 +17,15 @@ function lerDados() {
         cont++;
     }
 }
+function lerDadosLR() {
+    this.grau = parseInt(document.getElementById("grau").value);
+    this.coefFunc = [];
+    var cont = 0;
+    for (var i = this.grau; i >= 0; i--) {
+        this.coefFunc[cont] = parseFloat(document.getElementById("x" + i).value);
+        cont++;
+    }
+}
 
 function Avaliar() {
 //    Setando Dados
@@ -31,11 +40,11 @@ function Avaliar() {
 }
 function AvaliarLR() {
 //    Setando Dados
-    var leia = new lerDados();
-    leia.grau = 4;
-    leia.coefFunc = [1, 2, -13, -14, 24];
+//    var leia = new lerDadosLR();
+    this.grau = 4;
+    this.coefFunc = [1, 2, -13, -14, 24];
     var solucao = AlgoritmoLimiteRaizes(leia.grau, leia.coefFunc);
-    imprimirResultadoLR(leia.grau, leia.coefFunc, solucao);
+    imprimirResultadoLR(this.grau, this.coefFunc, solucao);
 //    L = 0.6316    4.7417  -14.0000 -0.5760
 //    var leia = new lerDados();
 //    leia;
