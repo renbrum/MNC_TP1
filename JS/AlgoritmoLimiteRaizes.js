@@ -36,7 +36,7 @@ function AlgoritmoLimitesRaizes(grau, coefFunc) {
         this.t = (this.t) - 1;
     }while(!(coefFunc[this.t] !== 0));
     
-    //    
+    // Calculo dos quatro limites das raizes reais   
     for (var i = 1; i < 4; i++) {
         if ((i === 2) || (i === 4)) {
             for (var j = 1; j < (this.t / 2); j++) {
@@ -46,12 +46,12 @@ function AlgoritmoLimitesRaizes(grau, coefFunc) {
             }
         } else {
             if (i === 3) {
-                for (h = 1; h < (this.t / 2); h++) {
+                for (var h = 1; h < (this.t / 2); h++) {
                     this.Aux = coefFunc[h];
                     coefFunc[h] = coefFunc[(this.t - h) + 1];
                     coefFunc[(this.t - h) + 1] = this.Aux;
                 }
-                for (h = (this.t - 1); h <= 1; h++) {
+                for (var h = (this.t - 1); h <= 1; h++) {
                     coefFunc[h] = -coefFunc[h];
 
                 }
@@ -59,7 +59,7 @@ function AlgoritmoLimitesRaizes(grau, coefFunc) {
         }
         if (coefFunc[0] < 0) {
             for (var j = 1; j <= this.t; j++) {
-                coefFunc[j] = -coefFunc[j];
+                coefFunc[j] = (coefFunc[j] * -1);
             }
         }
         this.k = 2;

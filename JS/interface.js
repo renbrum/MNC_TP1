@@ -92,7 +92,7 @@ function imprimirResultado(grau, ponto, coefFunc, y) {
 function imprimirResultadoLR(grau, coefFunc, l) {
     document.write("<br>Grau: " + grau);
     document.write("<br>c = [");
-    for (var i = 0; i < coefFunc.length; i++) {
+    for (var i = 0; i < coefFunc.length - 1; i++) {
         document.write(coefFunc[i] + "\t");
     }
     document.write("]");

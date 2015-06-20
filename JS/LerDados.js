@@ -20,8 +20,10 @@ function lerDados() {
 function lerDadosLR() {
     this.grau = parseInt(document.getElementById("grau").value);
     this.coefFunc = [];
-    var cont = 0;
-    for (var i = this.grau; i >= 0; i--) {
+    var cont = 1; 
+    for (var i = this.grau; i >= 0; i--) { //coefFunc começa com [1];
+         
+          
         this.coefFunc[cont] = parseFloat(document.getElementById("x" + i).value);
         cont++;
     }
