@@ -28,7 +28,7 @@ function AlgoritmoLimitesRaizes(grau, coefFunc) {
     
     this.n1 = grau + 1;
     this.aux2 = parseFloat(coefFunc[this.n1]);
-    //    repita
+    //   repita
     do{
         if (this.aux2 === this.zero) {
             document.write("Polinômio é deflacionado!");
