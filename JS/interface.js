@@ -97,7 +97,7 @@ function imprimirResultadoLR(grau, coefFunc, l) {
     }
     document.write("]");
     document.write("<br>L = [");
-    for (var i = 0; i < l.length; i++) {
+    for (var i = 1; i < l.length; i++) {
         document.write(l[i] + "\t");
     }
     document.write("]");

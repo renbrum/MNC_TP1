@@ -6,7 +6,7 @@
 this.c1 = 0;
 this.k = 0;
 this.b = 0;
-this.l = 0;
+this.l = [];
 this.Aux = 0;
 this.aux2 = 0;
 this.zero = 0;
@@ -17,7 +17,7 @@ this.t = 0;
 
 function AlgoritmoLimitesRaizes(grau, coefFunc) {
     grau = parseFloat(grau);
-    this.c1 = parseFloat(coefFunc[0]);
+    this.c1 = parseFloat(coefFunc[1]);
 
     if (this.c1 === 0) {
         document.write("Coeficiente c(1) nulo.");
@@ -57,7 +57,7 @@ function AlgoritmoLimitesRaizes(grau, coefFunc) {
                 }
             }
         }
-        if (coefFunc[0] < 0) {
+        if (coefFunc[1] < 0) {
             for (var j = 1; j <= this.t; j++) {
                 coefFunc[j] = (coefFunc[j] * -1);
             }
@@ -65,7 +65,7 @@ function AlgoritmoLimitesRaizes(grau, coefFunc) {
         this.k = 2;
         do{
             this.k = this.k + 1;
-        }while(!((coefFunc[k] < 0) || (k > t)));
+        }while(!((coefFunc[this.k] < 0) || (this.k > this.t)));
 
 
         if (this.k <= this.t) {
@@ -75,7 +75,7 @@ function AlgoritmoLimitesRaizes(grau, coefFunc) {
                 }
             }
             var dsoma = 0;
-            dsoma = Math.pow(this.b / coefFunc[0], (1 / (this.k - 1)));
+            dsoma = Math.pow((this.b / coefFunc[1]), (1 / (this.k - 1)));
             this.l[i] = 1 + dsoma;
         } else {
             this.l[i] = Math.pow(10, 100);
@@ -84,8 +84,8 @@ function AlgoritmoLimitesRaizes(grau, coefFunc) {
     this.Aux = this.l[1];
     this.l[i] = (1 / this.l[2]);
     this.l[2] = this.Aux;
-    this.l[3] = -this.l[3];
-    this.l[4] = -this.l[4];
+    this.l[3] = -1 * this.l[3];
+    this.l[4] = -1 * this.l[4];
     return this.l;
 }
 ;
