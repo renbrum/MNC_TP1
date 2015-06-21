@@ -46,19 +46,19 @@ function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax) {
         
        
     }
-     return a;
+     return Iter,Raiz,CondErro;
 }
 
 function f(x,grau,coefFunc) {
     var y = 0;
-    var f=0;
+    var resultado=0;
     y = parseFloat(coefFunc[0]);
     for (var i = grau; i >=0; i--) {
        if(i === 0){
-           f=f+coefFunc[0];
+           resultado=resultado+coefFunc[0];
        }else{
-           f=f+(x^i)*coefFunc[i];
+           resultado=resultado+((x^i)*coefFunc[i]);
        }
     }
-    return f;
+    return resultado;
 }
