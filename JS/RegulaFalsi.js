@@ -46,7 +46,7 @@ function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax) {
         
        
     }
-     return Iter,Raiz,CondErro;
+     return a;
 }
 
 function f(x,grau,coefFunc) {
