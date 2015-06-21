@@ -5,7 +5,8 @@
  */
 
 function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax) {
-    var FA;
+    return a;
+    /*var FA;
     var t;
     var Iter;
     var FX;
@@ -46,7 +47,7 @@ function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax) {
         
        
     }
-     return Iter,Raiz,CondErro;
+     return Iter;*/
 }
 
 function f(x,grau,coefFunc) {
