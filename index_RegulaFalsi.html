@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Algoritmo RegulaFalsi</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+     <body>
+        <div id="page_area">
+            <div id="texto">
+                <p id="p1">RegulaFalsi</p>
+                <p>Algoritmo RegulaFalsi</p>
+            
+            </div>  
+            <div id="formulario">
+                <form id="dados_entrada">
+                    <!-- <input type="file" id="fileUpload" />
+                        <input type="button" id="upload" value="Upload" onclick="Upload()" /> -->
+                    <hr />
+
+                    <!-- &emsp;Sentido: <select id="oti_combobox">
+                    <option value="2" selected>MIN</option>
+                    <option value="1">MAX</option>
+                    </select> -->
+
+                    &emsp;Grau: <input id="grau" type="number" min="0" max="10" step="1" value="2"/>
+                    &emsp;<input id="botaoGerarFuncao" type="button" value="Gerar Função" onclick="gerarFuncao()"/>
+                    &emsp;<input id="botaoRemoverFuncao" type="button" value="Remover Função" onclick="removerFuncao()" disabled/>
+                    <!-- &emsp;<input id="botaoSalvarArquivo" type="button" value="Salvar Tabelas de Entrada" onclick="salvar()" disabled/><br><br> -->
+                    <table id="tabela_coeficientes">
+                    </table>
+                    <br>
+
+                    <input id="botaoAvaliar" value="Avaliar" type="button" onclick="" />
+                </form>
+
+                <form id="dados_entrada2" action = "index.html">
+                    <input type="submit" value = "Voltar ao início">
+                </form>
+
+            </div>
+
+        </div>
+    </body>
+</html>
