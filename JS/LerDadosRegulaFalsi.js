@@ -71,7 +71,6 @@ function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax){
     var Iter;
     var FX;
     FA = f(a,grau,coefFunc);
-    return FA;
     var FB;
     var Raiz;
     var x;
@@ -116,14 +115,18 @@ function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax){
 
 function f(x,grau,coefFunc) {
     var resultado=0;
-    for (var i = grau; i >=0; i--) {
-       if(i === grau){
-           resultado+=coefFunc[grau];
+    var aux;
+    for(var j=0;j<=grau;j++){
+         aux[j]=coefFunc[j];
+        
+    }
+    for (var i =0; i<=grau; i++) {
+       if(i == grau){
+           resultado+=aux[grau];
            
        }else{
-           if(i!==grau){
-           document.write("resultado" +resultado);
-           resultado+=(((x)^i)*coefFunc[i]);
+           if(i!=grau){
+           resultado+=((Math.pow(x,i))*aux[i]);
             }
        }
     }
