@@ -18,8 +18,8 @@ this.Toler =0;
 
 function lerDados() {
     this.grau = parseInt(document.getElementById("grau").value);
-    this.intervaloa= parseInt(document.getElementById("intervaloa").value);
-    this.intervalob = parseInt(document.getElementById("intervalob").value);
+    this.intervaloa= parseInt(document.getElementById("intervalo1").value);
+    this.intervalob = parseInt(document.getElementById("intervalo2").value);
     this.Toler = document.getElementById("Toler").value;
     this.IterMax = parseInt(document.getElementById("iterMax").value);
     this.coefFunc = [];
