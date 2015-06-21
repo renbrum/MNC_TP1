@@ -77,7 +77,7 @@ function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax){
     FB = f(b,grau,coefFunc);
     var DELTAX=0;
     var CondErro;
-    if ((FA*FB) <= 0) {
+    if ((FA*FB)>0) {
         document.write("Função não muda de sinal nos extremos dos intervalo dado");return false;
     } else {
         if (FA > 0) {
@@ -105,7 +105,7 @@ function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax){
             CondErro=1;
         }
         
-       document.write("Iterações:" +Iter+ "CondErro:" +CondErro);
+      // document.write("Iterações:" +Iter+ "CondErro:" +CondErro);
      return Raiz;
     }
 }
