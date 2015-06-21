@@ -65,13 +65,13 @@ function AvaliarLR() {
 //    var solucao = AlgoritmoLimiteRaizes(leia.grau, leia.coefFunc);
 //    imprimirResultadoLR(leia.grau, leia.coefFunc, solucao);
 }
-function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax) {
-    return a;
-    /*var FA;
+function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax){
+    var FA;
     var t;
     var Iter;
     var FX;
     FA = f(a,grau,coefFunc);
+    return a;
     var FB;
     var Raiz;
     var x;
@@ -108,7 +108,7 @@ function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax) {
         
        
     }
-     return Iter;*/
+     return a;
 }
 
 function f(x,grau,coefFunc) {
