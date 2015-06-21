@@ -11,9 +11,17 @@
  */
 this.grau = 0;
 this.coefFunc = [];
+this.intervaloa =0;
+this.intervalob =0;
+this.IterMax =0;
+this.Toler =0;
 
 function lerDados() {
     this.grau = parseInt(document.getElementById("grau").value);
+    this.intervaloa= parseInt(document.getElementById("intervaloa").value);
+    this.intervalob = parseInt(document.getElementById("intervalob").value);
+    this.Toler = document.getElementById("Toler").value;
+    this.IterMax = parseInt(document.getElementById("iterMax").value);
     this.coefFunc = [];
     var cont = 0;
     for (var i = this.grau; i >= 0; i--) {
@@ -41,7 +49,7 @@ function Avaliar() {
 //    var coefFunc = [3, -2, 5, 7, -3, 1];
     var leia = new lerDados();
     leia;
-    var solucao = RegulaFalsi(leia.grau, leia.coefFunc);
+    var solucao = RegulaFalsi(leia.grau,leia.coefFunc,leia.intervaloa,leia.intervalob,leia.Toler,leia.IterMax);
     imprimirResultado(leia.grau, leia.coefFunc, solucao);
 }
 function AvaliarLR() {
