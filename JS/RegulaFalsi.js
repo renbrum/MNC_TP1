@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 
-function RegulaFalsi(a, b, Toler, IterMax) {
+function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax) {
     var FA;
     var t;
     var Iter;
     var FX;
-    FA = f(a);
+    FA = f(a,grau,coefFunc);
     var FB;
-    FB = f(b);
+    FB = f(b,grau,coefFunc);
     var DELTAX=0;
     var CondErro;
     if ((FA * FB) > 0) {
@@ -49,6 +49,6 @@ function RegulaFalsi(a, b, Toler, IterMax) {
     }
 }
 
-function f(x) {
+function f(x,grau,coefFunc) {
    
 }
