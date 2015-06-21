@@ -17,7 +17,7 @@ function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax) {
     var DELTAX=0;
     var CondErro;
     if ((FA * FB) > 0) {
-        document.write("Função não muda de sinal nos extremos dos intervalo dado");
+       // document.write("Função não muda de sinal nos extremos dos intervalo dado");
     } else {
         if (FA > 0) {
             t = a; a = b; b = t; t = FA; FA = FB; FB = t;
@@ -26,7 +26,7 @@ function RegulaFalsi(grau,coefFunc,a, b, Toler, IterMax) {
         do{
             DELTAX = -FX/(FB-FA)*(b-a);
             x=x+DELTAX; FX= f(x);
-            document.write("Iter" + Iter + "a" + a +"FA"+ FA + "b" + b+ "FB" + FB + "X" + x+ "FX" + FX + "DELTA X" + DELTAX );
+            //document.write("Iter" + Iter + "a" + a +"FA"+ FA + "b" + b+ "FB" + FB + "X" + x+ "FX" + FX + "DELTA X" + DELTAX );
             if(FX <0){
                 a=x;
                 FA= FX;
@@ -53,11 +53,11 @@ function f(x,grau,coefFunc) {
     var y = 0;
     var f=0;
     y = parseFloat(coefFunc[0]);
-    for (var i = 0; i <= grau; i++) {
+    for (var i = grau; i >=0; i--) {
        if(i === 0){
            f=f+coefFunc[0];
        }else{
-           f=f+(x^i)*coefFunc[i+1];
+           f=f+(x^i)*coefFunc[i];
        }
     }
     return f;

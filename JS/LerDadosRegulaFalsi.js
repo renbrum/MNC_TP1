@@ -41,7 +41,7 @@ function lerDadosLR() {
     }
 }
 
-function Avaliar() {
+function Avaliar(){
 //    Setando Dados
 //    var solucao = AlgoritmoHorner(leia.grau, leia.coefFunc, leia.ponto);
 //    var grau = 5;

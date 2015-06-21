@@ -85,15 +85,15 @@ function removerFuncao() {
     }
 }
 
-function imprimirResultado(grau, ponto, coefFunc, y) {
+function imprimirResultado(grau,coefFunc, solucao) {
     document.write("<br>Grau: " + grau);
-    document.write("<br>Ponto: " + ponto);
-    document.write("<br>C:[");
+    document.write("<br>Coeficientes:[");
     for (var i = 0; i < coefFunc.length; i++) {
         document.write(coefFunc[i] + "\t");
     }
     document.write("]");
-    document.write("<br>y: " + y);
+    //document.write("<br>Solucao: " + y);
+  
 }
 function imprimirResultadoLR(grau, coefFunc, l) {
     document.write("<br>Grau: " + grau);
