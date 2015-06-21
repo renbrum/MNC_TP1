@@ -1,6 +1,5 @@
 this.grau = 0;
 this.ponto = 0;
-
 function gerarFuncao() {
     atualizarCampos();
     esvaziarTabelas();
