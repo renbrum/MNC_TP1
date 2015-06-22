@@ -88,7 +88,6 @@ function RegulaFalsi(grau, coefFunc, a, b, Toler, IterMax) {
             FX = f(x, grau, coefFunc);
 
             //return FX;
-            document.write("\t");
             document.write("Iteração: " + Iter + " a: " + a +" FA"+ FA + "b: " + b+ " FB:" + FB + " X: " + x+ "FX: " + FX + "DELTA X: " + DELTAX );
             if (FX < 0) {
                 a = x;
