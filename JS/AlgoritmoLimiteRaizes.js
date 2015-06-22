@@ -70,7 +70,7 @@ function AlgoritmoLimitesRaizes(grau, coefFunc) {
 
         if (this.k <= this.t) {
             for (var j = 2; j <= this.t; j++) {
-                if ((coefFunc[this.k] < 0) || (abs(coefFunc[j]) > 0)) {
+                if ((coefFunc[this.k] < 0) || (Math.abs(coefFunc[j]) > 0)) {
                     this.b = Math.abs(coefFunc[j]);
                 }
             }
