@@ -17,26 +17,27 @@ this.IterMax = 0;
 this.Toler = 0;
 
 function lerDados() {
-//    this.grau = parseInt(document.getElementById("grau").value);
-//    this.intervaloa = parseInt(document.getElementById("intervalo1").value);
-//    this.intervalob = parseInt(document.getElementById("intervalo2").value);
-//    this.Toler = document.getElementById("Toler").value;
-//    this.IterMax = parseInt(document.getElementById("iterMax").value);
-//    this.coefFunc = [];
-//    var cont = 0;
-//    for (var i = this.grau; i >= 0; i--) {
-//        this.coefFunc[cont] = parseFloat(document.getElementById("x" + i).value);
-//        cont++;
-//    }
+    this.grau = parseInt(document.getElementById("grau").value);
+    this.intervaloa = parseInt(document.getElementById("intervalo1").value);
+    this.intervalob = parseInt(document.getElementById("intervalo2").value);
+    this.Toler = document.getElementById("Toler").value;
+    this.IterMax = parseInt(document.getElementById("iterMax").value);
+    this.coefFunc = [];
+    var cont = 0;
+    for (var i = this.grau; i >= 0; i--) {
+        this.coefFunc[cont] = parseFloat(document.getElementById("x" + i).value);
+        cont++;
+    }
 
-    this.grau = 3;
+    /*this.grau = 3;
     this.coefFunc = [4, 6, -26, -14];
     this.intervaloa = -1;
     this.intervalob = 1;
     this.Toler = 0.001;
     this.IterMax = 100;
-    var solucao = RegulaFalsi(this.grau, this.coefFunc, this.intervaloa, this.intervalob, this.Toler, this.IterMax); //grau, coefFunc, a, b, Toler, IterMax
-    document.write("<br>Nossa raiz e: "+solucao);
+    var solucao = RegulaFalsi(this.grau, this.coefFunc, this.intervaloa, this.intervalob, this.Toler, this.IterMax);*/
+    //grau, coefFunc, a, b, Toler, IterMax
+    //document.write("<br>A raiz é: "+solucao);
     //
 //    imprimirResultadoLR(this.grau, this.coefFunc, solucao);
 }
@@ -87,7 +88,8 @@ function RegulaFalsi(grau, coefFunc, a, b, Toler, IterMax) {
             FX = f(x, grau, coefFunc);
 
             //return FX;
-            //document.write("Iter" + Iter + "a" + a +"FA"+ FA + "b" + b+ "FB" + FB + "X" + x+ "FX" + FX + "DELTA X" + DELTAX );
+            document.write("\t");
+            document.write("Iteração: " + Iter + " a: " + a +" FA"+ FA + "b: " + b+ " FB:" + FB + " X: " + x+ "FX: " + FX + "DELTA X: " + DELTAX );
             if (FX < 0) {
                 a = x;
                 FA = FX;
