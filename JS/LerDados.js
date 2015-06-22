@@ -29,6 +29,14 @@ function lerDadosLR() {
     }
 }
 
+function lerDadosMuller() {
+    this.limiteInferior = parseFloat(document.getElementById("limiteInferior").value);
+    this.limiteSuperior = parseFloat(document.getElementById("limiteSuperior").value);
+    this.toler = parseFloat(document.getElementById("toler").value);
+    this.iterMax = parseFloat(document.getElementById("iterMax").value);
+    
+}
+
 function Avaliar() {
 //    Setando Dados
 //    var solucao = AlgoritmoHorner(leia.grau, leia.coefFunc, leia.ponto);

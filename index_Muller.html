@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" href="CSS/estilo.css" type="text/css"/>
+        <link rel="stylesheet" href="CSS/estilo.css" type="text/css">
+        <meta charset="utf-8"/>
+         <script src="JS/LerDados.js"></script>
+        <script src="JS/AlgoritmoMuller.js"></script>
+    <title>Trabalho Javascript</title>
+    </head>
+    <body>
+        <div class="site_container site_toc_closed">
+            <div class="page_container">
+                <div class="content_frame">
+                    <div class="content_container" id="content_container">
+
+                        <h1>Metodo Muller</h1>
+                        <form id="formMuller" action="" method="POST">
+
+                            <p>Limite inferior:
+                                <input type="text" id="limiteInferior"/>
+                            </p>
+                            <p>Limite superior:
+                                <input type="text" id="limiteSuperior"/>
+                            </p>
+                            <p>Tolerância:
+                                <input type="text" id="toler"/>
+                            </p>
+                            <p>Iterações:
+                                <input type="text" id="iterMax"/>
+                            </p>
+                            <p>
+                                <input type="button" id="buttonMuller" value="Muller" onclick="init()"/>
+                            </p>
+                            <p>Raiz: 
+                                <input type="text" name="raiz" id="raiz" readonly="readonly" />
+                            </p>
+                            <p>Total Iterações: 
+                                <input type="text" name="iter" id="iter" readonly="readonly" />
+                            </p>
+                            <p>CondErro: 
+                                <input type="text" name="condErro" id="condErro" readonly="readonly" />
+                            </p>
+
+                        </form>
+                    </div> <!-- close_content_container -->
+                </div> <!-- close_content_frame -->
+            </div> <!--  close_page_container -->
+        </div> <!--  close_site_container -->
+<!--        <script type="text/javascript" src="javascript/muller.js"></script>-->
+    </body>
+</html>
