@@ -30,7 +30,7 @@ function secante(a, b, toler, itermax){
         iter++;
         raiz=x;
         // Teste de Convergência
-        if(math.abs(DeltaX)<=toler && math.abs(Fx)<=toler){
+        if( (math.abs(DeltaX)<=toler) && (math.abs(Fx)<=toler)){
             CondErro=0;
         }
         else{
