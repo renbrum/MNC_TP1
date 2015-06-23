@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 
-
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 this.grau = 0;
 this.coefFunc = [];
 this.intervaloa = 0;
@@ -24,7 +28,20 @@ function lerDados() {
         this.coefFunc[cont] = parseFloat(document.getElementById("x" + i).value);
         cont++;
     }
+
+    /*this.grau = 3;
+    this.coefFunc = [4, 6, -26, -14];
+    this.intervaloa = -1;
+    this.intervalob = 1;
+    this.Toler = 0.001;
+    this.IterMax = 100;
+    var solucao = RegulaFalsi(this.grau, this.coefFunc, this.intervaloa, this.intervalob, this.Toler, this.IterMax);*/
+    //grau, coefFunc, a, b, Toler, IterMax
+    //document.write("<br>A raiz é: "+solucao);
+    //
+//    imprimirResultadoLR(this.grau, this.coefFunc, solucao);
 }
+
 
 function Avaliar() {
 //    Setando Dados
@@ -34,47 +51,76 @@ function Avaliar() {
 //    var coefFunc = [3, -2, 5, 7, -3, 1];
     var leia = new lerDados();
     leia;
-    var solucao = RegulaFalsi(leia.grau, leia.coefFunc, leia.intervaloa, leia.intervalob, leia.Toler, leia.IterMax);
+    var solucao = Bissecao(leia.grau, leia.coefFunc, leia.intervaloa, leia.intervalob, leia.Toler, leia.IterMax);
     imprimirResultado(leia.grau, leia.coefFunc, solucao);
 }
 
-function Biseccao(grau, coefFunc, a, b, toler, itermax){
-    var Fa=0;
-    var iter = 0;
-    var Fx = 0;
-    var Fb = 0;
-    var raiz = 0;
+function Bissecao(grau, coefFunc, a, b, Toler, IterMax) {
+    var FA = 0;
+    var Iter = 0;
+    var FX = 0;
+    var FB = 0;
+    var Raiz = 0;
     var x = 0;
-    var DeltaX = 0;
-    var condErro = 0;
-    Fa= f(a, grau, coefFunc);
-    Fb= f(b, grau, coefFunc);
-    if(Fa*Fb>0){
-        document.write("Função não muda sinal nos extremos do intervalo dado.");
-    }
-    DeltaX= math.abs(b-a)/2;
-    iter=0;
-    while((DeltaX>toler && math.abs(Fx)>toler)|| iter>itermax){
-        x=(a+b)/2;
-        Fx=f(x);
-        document.write("Iteração: " + Iter + " a: " + a +" Fa"+ Fa + "b: " + b+ " Fb:" + Fb + " x: " + x+ "Fx: " + Fx + "Delta X: " + DeltaX );
-        if(Fa*Fx>0){
-            a=x;
-            Fa=Fx;
-            return false;
-        }
-        else{
-            b=x;
-        }
-        DeltaX=DeltaX/2;
-        iter++;
-    }
-    raiz=x;
-    // Teste de Convergência
-    if(DeltaX <= toler && math.abs(Fx)<toler){
-        CondErro=0;
-    }
+    var DELTAX = 0;
+    var CondErro = 0;
+    // avaliar função em a e b
+    FA = f(a, grau, coefFunc);  
+    FB = f(b, grau, coefFunc);
+    if ((FA * FB) > 0) {
+        document.write("Função não muda de sinal nos extremos do intervalo dado");
+        return false;
+    } 
     else{
-        CondErro=1;
+        DELTAX = (Math.abs(b-a)/2);
+        Iter=0;
+        do{
+            x=( (a+b)/2 );
+            FX=f(x, grau, coefFunc);
+            document.write("Iteração: " + Iter + " a: " + a +" FA:"+ FA + "b: " + b+ " FB:" + FB + " X: " + x+ "FX: " + FX + "DELTA X: " + DELTAX );
+            if( (FA*FX) > 0){
+                a=x;
+                FA=FX;
+            }
+            else{
+                b=x;
+            }
+            DELTAX=(DELTAX/2);
+            Iter=Iter+1;
+        }while((DELTAX <= Toler && Math.abs(FX)<= Toler)    ||  Iter >= IterMax);
+        Raiz = x;
+//        return x;
+        if (DELTAX <= Toler && Math.abs(FX) <= Toler) {
+            CondErro = 0;
+        } else {
+            CondErro = 1;
+        }
+
+        // document.write("Iterações:" +Iter+ "CondErro:" +CondErro);
+        return Raiz;
     }
 }
+
+function f(x, grau, coefFunc) {
+    var resultado = 0;
+    var aux = [];
+    var j;
+    var auxGrau = grau;
+    for (j = 0; j <= grau; j++) {
+        aux[j] = coefFunc[j];
+    }
+    for (var i = 0; i <= grau; i++) {
+        if (i === grau) {
+            resultado += aux[grau];
+
+        } else {
+            if (i !== grau) {
+                resultado += ((Math.pow(x, auxGrau)) * aux[i]);
+            }
+            auxGrau--;
+        }
+    }
+    return resultado;
+}
+
+
