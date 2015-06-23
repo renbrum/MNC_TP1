@@ -62,4 +62,22 @@ function AvaliarLR() {
 //    imprimirResultadoLR(leia.grau, leia.coefFunc, solucao);
 }
 
+function AvaliarNewton() {
+//    Setando Dados
+//    var leia = new lerDadosLR();
+   alert("Deu certo 1");
+    this.x0 = 8;
+    this.grau = 5;
+    this.coefFunc = [1, -14, 30, 236, -511,-1470];
+    this.IterMax = 8;
+    this.Toler = 10;
+    var solucao = Newton(this.x0, this.Toler, this.IterMax, this.coefFunc,this.grau);
+    
+//    L = 0.6316    4.7417  -14.0000 -0.5760
+//    var leia = new lerDados();
+//    leia;
+//    var solucao = AlgoritmoLimiteRaizes(leia.grau, leia.coefFunc);
+//    imprimirResultadoLR(leia.grau, leia.coefFunc, solucao);
+}
+
 

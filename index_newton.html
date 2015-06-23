@@ -5,7 +5,8 @@
         <title>Grupo 6 - MNC</title>
         <script src="JS/interface.js"></script>
         <script src="JS/AlgoritmoNewton.js"></script>
-        <link rel="stylesheet" href="estilo.css"></link>
+         <script src="JS/LerDados.js"></script>
+        <link rel="stylesheet" href="estilo.css">
         <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         -->
@@ -36,14 +37,18 @@
                     <table id="tabela_coeficientes">
                     </table>
                     <br>
-
-                    <input id="botaoAvaliar" value="Avaliar" type="button" onclick="" />
+                    Valor x0 : <input id="x0" type="number" min="0" max="10" step="1" value="0"/>
+                    <br><br>
+                    Intervalo: De <input id="inter_min" type="number" min="0" max="10" step="1" value="0"/> 
+                    à <input id="inter_max" type="number" min="0" max="10" step="1" value="0"/>
+                    
+                    <input id="botaoAvaliar" value="Avaliar" type="button" onclick="AvaliarNewton()" />
                 </form>
 
                 <form id="dados_entrada" action = "index.html">
                     <input type="submit" value = "Voltar ao início">
                 </form>
-
+          
             </div>
 
         </div>
