@@ -6,9 +6,60 @@
 
 // Objetivo Calcular a raiz pelo metódo de van Wijngaarden-Dekker-Brent
 
-function Funcao()
+function Funcao(x0, funcao, grau)
 {
+   var grau = grau; // variavel que mostra o grau da funcao
+   var cont = 0;   // contador
+  
+   var parcial = 0; // valor parcial da funcao
+   var total = 0; // valor final da funcao
+
+    do
+    {
+       for(x=0; x <= (grau-2); x++) // grau - 2 para calcular corretamente pelo grau da funcao
+       {
+          if(grau >= 1)
+          {
+             if(x === 0)   // 1ª intereção somente;
+             {
+               var produto = x0 * x0;
+               soma = produto;
+             }
+             else      // Restante das interações dependendo do grau da função
+             {
+               var soma = produto * x0;
+               produto = soma;
+             }
+          }
+          else
+          {
+              if (grau === 0)
+              {
+                  var produto = x0 * x0;
+                  var soma = produto * x0;
+              }
+          }
+       }
+    if(grau === 1) // quando o grau for igual a 1, que dizer que a funçao tem o mesmo valor do coeficiente da variavel.
+    {
+        soma = x0;
+    }  
+     if(grau > 0) // Se o grau for > 0, significa que a variavel possui um coeficiente.
+        {
+            parcial = soma * parseFloat(funcao[cont]);
+        }
+     else // caso contrário não existe variavel, somente um numero real
+     {
+         parcial = parseFloat(funcao[cont]);
+     }
+        total   = total + parcial; 
+    cont++;
+    grau--;   
+    soma = "";
     
+    }while(grau >= 0);
+    
+    return (total);
    
 }
 
@@ -17,10 +68,15 @@ function Funcao()
 // Toler    = tolerância
 // InterMax = Numero máximo de interações
 
-function DekkerBrent(a,b, Toler, IterMax) 
+function DekkerBrent(a,b, Toler, IterMax, funcao, grau) 
 {
-    var Fa = Funcao(a);
-    var Fb = Funcao(b);
+    var Fa = Funcao(a,funcao, grau);
+    var Fb = Funcao(b,funcao, grau);
+    
+    alert("Deu certo 1");
+    
+    document.write("<br>Valor de Fa: ",Fa);
+    document.write("<br>Valor de Fb: ",Fb);
     
    if ((Fa * Fb)> 0)
    {
@@ -118,8 +174,11 @@ function DekkerBrent(a,b, Toler, IterMax)
         b = b+ sinal(z)* Tol;
     }
     Iter = Iter+1;
-    Fb   = Funcao(b); // Avaliar a função em b ;
+    Fb   = Funcao(b,funcao, grau); // Avaliar a função em b ;
    }while(a>0)
+    
+    
+    
     
     var Raiz = b;
 
