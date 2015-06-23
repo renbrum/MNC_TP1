@@ -92,7 +92,7 @@ function imprimirResultado(grau,coefFunc, solucao) {
         document.write(coefFunc[i] + "\t");
     }
     document.write("]");
-    document.write("<br>Solucao: " + solucao);
+    document.write("<br>Raiz: " + solucao);
   
 }
 function imprimirResultadoLR(grau, coefFunc, l) {
