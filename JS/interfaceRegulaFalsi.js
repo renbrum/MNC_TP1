@@ -95,17 +95,4 @@ function imprimirResultado(grau,coefFunc, solucao) {
     document.write("<br>Raiz: " + solucao);
   
 }
-function imprimirResultadoLR(grau, coefFunc, l) {
-    document.write("<br>Grau: " + grau);
-    document.write("<br>c = [");
-    for (var i = 0; i < coefFunc.length - 1; i++) {
-        document.write(coefFunc[i] + "\t");
-    }
-    document.write("]");
-    document.write("<br>L = [");
-    for (var i = 1; i < l.length; i++) {
-        document.write(l[i] + "\t");
-    }
-    document.write("]");
-}
-;
+
