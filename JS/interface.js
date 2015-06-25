@@ -168,4 +168,24 @@ function salvarArquivo(filename, variaveis, restricoes, relacoes, ladoDireito) {
 		}
 	}
 }
+function regularizaTabelas(){
+	for(var i = 0 ; i < numberOfVariables ; i++) {
+		var field = document.getElementById("x"+(i+1));
+		if (field.value == '') {
+			field.value = 0;
+		}
+	}
+	for(var i = 0 ; i < numberOfRestrictions ; i++) {
+		for(var j = 0 ; j < numberOfVariables ; j++) {
+			var field = document.getElementById("r"+(i+1)+"x"+(j+1));
+			if (field.value == '') {
+				field.value = 0;
+			}
+		}
+		field = document.getElementById("r"+(i+1)+"ladoDireito");
+		if (field.value == '') {
+			field.value = 0;
+		}
+	}
+}
 ;
