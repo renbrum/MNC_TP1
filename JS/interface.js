@@ -101,4 +101,71 @@ function imprimirResultadoLR(grau, coefFunc, l) {
     }
     document.write("]");
 }
+function salvar(){
+	regularizaTabelas();
+	
+	var variaveis = [];
+	var restricoes = [];
+	for(var i = 0 ; i < numberOfRestrictions ; i++) {
+		restricoes[i] = [];
+	}
+	var relacoes = [];
+	var ladoDireito = [];
+	
+	for(var i = 0 ; i < numberOfVariables ; i++) {
+		variaveis[i] = document.getElementById("x"+(i+1)).value;
+	}
+	for(var i = 0 ; i < numberOfRestrictions ; i++) {
+		for(var j = 0 ; j < numberOfVariables ; j++) {
+			restricoes[i][j] = document.getElementById("r"+(i+1)+"x"+(j+1)).value;
+		}
+		var relacao = document.getElementById("r"+(i+1)+"relacao").value;
+		if (relacao == 0) {
+			relacoes[i] = "<";
+		} else if (relacao == 1) {
+			relacoes[i] = "=";
+		} else {
+			relacoes[i] = ">";
+		}
+		ladoDireito[i] = document.getElementById("r"+(i+1)+"ladoDireito").value;
+	}
+	salvarArquivo("entradas.csv", variaveis, restricoes, relacoes, ladoDireito);
+	teste = restricoes;
+}
+
+function salvarArquivo(filename, variaveis, restricoes, relacoes, ladoDireito) {
+	var csvFile = "v,"+numberOfVariables+"/n";
+	csvFile += "r,"+numberOfRestrictions+"/n";
+	csvFile += "x,"+document.getElementById("oti_combobox").value+"/n/n";
+	csvFile += "z";
+	for (var i = 0; i < variaveis.length; i++) {
+		csvFile += ","+variaveis[i];
+	}
+	csvFile += "/n"
+	for (var i = 0; i < restricoes.length; i++) {
+		csvFile += String.fromCharCode(97 + i);
+		for (var j = 0; j < restricoes[i].length; j++) {
+			csvFile += ","+restricoes[i][j];
+		}
+		csvFile += ","+relacoes[i];
+		csvFile += ","+ladoDireito[i]+"/n";
+	}
+
+	var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;'});
+	if (navigator.msSaveBlob) { // IE 10+
+		navigator.msSaveBlob(blob, filename);
+	} else {
+		var link = document.createElement("a");
+		if (link.download !== undefined) { // feature detection
+			// Browsers that support HTML5 download attribute
+			var url = URL.createObjectURL(blob);
+			link.setAttribute("href", url);
+			link.setAttribute("download", filename);
+			link.style = "visibility:hidden";
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		}
+	}
+}
 ;

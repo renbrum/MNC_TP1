@@ -77,7 +77,7 @@ function AvaliarNewton() {
 //    var leia = new lerDados();
 //    leia;
 //    var solucao = AlgoritmoLimiteRaizes(leia.grau, leia.coefFunc);
-//    imprimirResultadoLR(leia.grau, leia.coefFunc, solucao);
+    imprimirResultadoLR(leia.grau, leia.coefFunc, solucao);
 }
 
 function AvaliarDekkerBrent() {
