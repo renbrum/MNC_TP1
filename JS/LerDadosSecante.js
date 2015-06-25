@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 
-
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 this.grau = 0;
 this.coefFunc = [];
 this.intervaloa = 0;
@@ -24,7 +28,20 @@ function lerDados() {
         this.coefFunc[cont] = parseFloat(document.getElementById("x" + i).value);
         cont++;
     }
+
+    /*this.grau = 3;
+    this.coefFunc = [4, 6, -26, -14];
+    this.intervaloa = -1;
+    this.intervalob = 1;
+    this.Toler = 0.001;
+    this.IterMax = 100;
+    var solucao = RegulaFalsi(this.grau, this.coefFunc, this.intervaloa, this.intervalob, this.Toler, this.IterMax);*/
+    //grau, coefFunc, a, b, Toler, IterMax
+    //document.write("<br>A raiz é: "+solucao);
+    //
+//    imprimirResultadoLR(this.grau, this.coefFunc, solucao);
 }
+
 
 function Avaliar() {
 //    Setando Dados
@@ -34,49 +51,80 @@ function Avaliar() {
 //    var coefFunc = [3, -2, 5, 7, -3, 1];
     var leia = new lerDados();
     leia;
-    var solucao = RegulaFalsi(leia.grau, leia.coefFunc, leia.intervaloa, leia.intervalob, leia.Toler, leia.IterMax);
+    var solucao = Secante(leia.grau, leia.coefFunc, leia.intervaloa, leia.intervalob, leia.Toler, leia.IterMax);
     imprimirResultado(leia.grau, leia.coefFunc, solucao);
 }
 
-function secante(grau, coefFunc, a, b, toler, itermax){
-    var Fa=0;
-    var iter = 0;
-    var Fx = 0;
-    var Fb = 0;
-    var raiz = 0;
+
+function Secante(grau, coefFunc, a, b, Toler, IterMax){
+    var FA=0;
+    var Iter = 0;
+    var FX = 0;
+    var FB = 0;
+    var Raiz = 0;
     var x = 0;
-    var DeltaX = 0;
+    var DELTAX = 0;
     var t=0;
-    var condErro = 0;
-    Fa= f(a, grau, coefFunc);
-    Fb= f(b, grau, coefFunc);
+    var CondErro = 0;
+    FA= f(a, grau, coefFunc);
+    FB= f(b, grau, coefFunc);
     
-    if( (math.abs(Fa)) < (math.abs(Fb)) ){
+    if( (Math.abs(FA)) < (Math.abs(FB)) ){
         t=a;
         a=b;
         b=t;
-        t=Fa;
-        Fa=Fb;
-        Fb=t;
+        t=FA;
+        FA=FB;
+        FB=t;
     }
-    iter=0; x=b; Fx=Fb;
-    while(  (math.abs(DeltaX)>toler && math.abs(Fx)>toler) || iter>itermax){
-        DeltaX=-Fx/(Fb-Fa)*(b-a);
-        x=x+DeltaX;
-        Fx=f(x);
-    document.write("Iteração: " + Iter + " a: " + a +" Fa"+ Fa + "b: " + b+ " Fb:" + Fb + " x: " + x+ "Fx: " + Fx + "Delta X: " + DeltaX );
+    Iter=0; 
+    x=b;
+    FX=FB;
+    do{
+        DELTAX=-FX/( (FB-FA)*(b-a) );
+        x=x+DELTAX;
+        FX=f(x, grau, coefFunc);
+        document.write("Iteração: " + Iter + " a: " + a +" FA"+ FA + "b: " + b+ " FB:" + FB + " x: " + x+ "FX: " + FX + "Delta X: " + DELTAX );
         a=b;
-        Fa=Fb;
+        FA=FB;
         b=x;
-        Fb=Fx; 
-        iter++;
-        raiz=x;
-        // Teste de Convergência
-        if( (math.abs(DeltaX)<=toler) && (math.abs(Fx)<=toler)){
+        FB=FX; 
+        Iter=(Iter+1);
+    }while( (Math.abs(DELTAX) > Toler && Math.abs(FX) > Toler) && (Iter < IterMax) );
+    Raiz=x;    
+    // Teste de Convergência
+        if( (Math.abs(DELTAX)<= Toler) && (Math.abs(FX)<= Toler) ){
             CondErro=0;
         }
         else{
             CondErro=1;
         }
-    }
+        return Raiz;
 }
+
+
+
+
+function f(x, grau, coefFunc) {
+    var resultado = 0;
+    var aux = [];
+    var j;
+    var auxGrau = grau;
+    for (j = 0; j <= grau; j++) {
+        aux[j] = coefFunc[j];
+    }
+    for (var i = 0; i <= grau; i++) {
+        if (i === grau) {
+            resultado += aux[grau];
+
+        } else {
+            if (i !== grau) {
+                resultado += ((Math.pow(x, auxGrau)) * aux[i]);
+            }
+            auxGrau--;
+        }
+    }
+    return resultado;
+}
+
+
