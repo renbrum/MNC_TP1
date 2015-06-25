@@ -69,9 +69,9 @@ function AlgoritmoLimitesRaizes(grau, coefFunc) {
 
 
         if (this.k <= this.t) {
-            for (var j = 2; j <= this.t; j++) {
-                if ((coefFunc[this.k] < 0) || (Math.abs(coefFunc[j]) > 0)) {
-                    this.b = Math.abs(coefFunc[j]);
+            for (var f = 2; f <= this.t; f++) {
+                if ((coefFunc[this.k] < 0) || (Math.abs(coefFunc[f]) > 0)) {
+                    this.b = Math.abs(coefFunc[f]);
                 }
             }
             var dsoma = 0;
