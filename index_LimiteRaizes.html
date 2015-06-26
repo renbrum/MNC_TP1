@@ -79,48 +79,33 @@
             </header>
             <!-- end header -->
             <a class="navbar-brand" href="explicacao/index.html"><span>Algoritmo Limite das Raízes<span></a>
+            <br><br><br><br><br>
+            <p align="center">
+            <body>
+                <div id="formulario" align="center">
+                    <form id="dados_entrada">
+                        <hr />
+                        &emsp;Grau: <input id="grau" type="number" min="0" max="10" step="1" value="4"/>
+                        &emsp;<input id="botaoGerarFuncao" type="button" value="Gerar Função" onClick="gerarFuncao()"/>
+                        &emsp;<input id="botaoRemoverFuncao" type="button" value="Remover Função" onClick="removerFuncao()" disabled/>
 
+                        
+                        <table id="tabela_coeficientes">
+                        </table>
+                        <br>
 
+                        <input id="botaoAvaliar" value="Avaliar" type="button" onClick="AvaliarLR()" />
+                    </form>
+                    <form id="textoresultado">
+                        <div id="valoresultado"></div>
+                    </form>
+                    <form id="dados_entrada" action = "index.html">
+                        <input type="submit" value = "Voltar ao início">
+                    </form>
 
+                </div>
 
-                        <br><br><br><br><br>
-                        <p align="center">
-
-                        <body>
-
-                            <div id="formulario" align="center">
-                                <form id="dados_entrada">
-                                    <!-- <input type="file" id="fileUpload" />
-                                        <input type="button" id="upload" value="Upload" onclick="Upload()" /> -->
-                                    <hr />
-
-                                    <!-- &emsp;Sentido: <select id="oti_combobox">
-                                    <option value="2" selected>MIN</option>
-                                    <option value="1">MAX</option>
-                                    </select> -->
-
-                                    &emsp;Grau: <input id="grau" type="number" min="0" max="10" step="1" value="4"/>
-                                    &emsp;<input id="botaoGerarFuncao" type="button" value="Gerar Função" onClick="gerarFuncao()"/>
-                                    &emsp;<input id="botaoRemoverFuncao" type="button" value="Remover Função" onClick="removerFuncao()" disabled/>
-
-                                    <!-- &emsp;<input id="botaoSalvarArquivo" type="button" value="Salvar Tabelas de Entrada" onclick="salvar()" disabled/><br><br> -->
-                                    <table id="tabela_coeficientes">
-                                    </table>
-                                    <br>
-
-                                    <input id="botaoAvaliar" value="Avaliar" type="button" onClick="AvaliarLR()" />
-                                </form>
-                                <form id="textoresultado">
-                                    <div id="valoresultado"></div>
-                                </form>
-                                <form id="dados_entrada" action = "index.html">
-                                    <input type="submit" value = "Voltar ao início">
-                                </form>
-
-                            </div>
-
-                            </div>
-                        </body>
-
-                        </html>
+            </div>
+    </body>
+</html>
 

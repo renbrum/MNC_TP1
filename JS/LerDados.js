@@ -99,3 +99,34 @@ function AvaliarDekkerBrent() {
 //    imprimirResultadoLR(leia.grau, leia.coefFunc, solucao);
 }
 
+function AvaliarMuller() {
+    this.limiteInferior = 10.0;
+    this.limiteSuperior = 12.0;
+    this.toler = 0.0000001;
+    this.iterMax = 100;
+    
+    if (isNaN(this.limiteInferior)) {
+        alert('Valor inválido em "Limite inferior": ' + fieldLimiteInferior.value);
+        a.focus();
+        return;
+    } else if (isNaN(this.limiteSuperior)) {
+        alert('Valor inválido em "Limite superior": ' + fieldLimiteSuperior.value);
+        c.focus();
+        return;
+    } else if (isNaN(this.toler)) {
+        alert('Valor inválido em "Tolerância": ' + fieldToler.value);
+        toler.focus();
+        return;
+    } else if (isNaN(this.iterMax)) {
+        alert('Valor inválido em "Iterações": ' + fieldIterMax.value);
+        iterMax.focus();
+        return;
+    }
+//    var leia = new lerDadosMuller();
+//    leia;
+//    var solucao = AlgoritmoMuller(leia.limiteInferior, leia.limiteSuperior, leia.toler, leia.iterMax);
+//    imprimirResultado(leia.limiteInferior, leia.limiteSuperior, leia.toler, leia.iterMax, solucao);
+    AlgoritmoMuller(this.limiteInferior, this.limiteSuperior, this.toler, this.iterMax);
+}
+;
+

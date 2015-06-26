@@ -1,52 +1,97 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
     <head>
-        <link rel="stylesheet" href="CSS/estilo.css" type="text/css"/>
-        <link rel="stylesheet" href="CSS/estilo.css" type="text/css">
-            <meta charset="utf-8"/>
-            <script src="JS/LerDados.js"></script>
-            <script src="JS/AlgoritmoMuller.js"></script>
-            <title>Trabalho Javascript</title>
+        <meta charset="utf-8">
+        <title>Algoritmo de Muller</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="author" content="http://bootstraptaste.com" />
+        <!-- css -->
+        <link href="moderna/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="moderna/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+        <link href="moderna/css/jcarousel.css" rel="stylesheet" />
+        <link href="moderna/css/flexslider.css" rel="stylesheet" />
+        <link href="moderna/css/style.css" rel="stylesheet" />
+        <script src="JS/interface.js"></script>
+        <script src="JS/LerDados.js"></script>
+        <script src="JS/AlgoritmoMuller.js"></script>
+        <link rel="stylesheet" href="estilo.css"></link>
+        <link rel="stylesheet" type="text/css" href="moderna/css/modal.css">
+        <!-- Theme skin -->
+        <link href="moderna/skins/default.css" rel="stylesheet" />
+        <style type="text/css">
+            #wrapper table tr td p {
+                color: #000;
+            }
+        </style>
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
     </head>
     <body>
-        <div class="site_container site_toc_closed">
-            <div class="page_container">
-                <div class="content_frame">
-                    <div class="content_container" id="content_container">
+        <div id="wrapper">
+            <!-- start header -->
+            <header>
+                <div class="navbar navbar-default navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.html"><span>mnc</span> - capítulo 6</a>
+                        </div>
+                        <div class="navbar-collapse collapse ">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Algoritmos <b class=" icon-angle-down"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="explicacao/index_Bissecao.html">Bisseção</a></li>
+                                        <li><a href="explicacao/index_DekkerBrent.html">van Wijngaarden-Dekker-Brent</a></li>
+                                        <li><a href="explicacao/index_Horner.html">Horner</a></li>
+                                        <li><a href="explicacao/index_LimiteRaizes.html">Limite das Raizes</a></li>
+                                        <li><a href="explicacao/index_Muller.html">Muller</a></li>
+                                        <li><a href="explicacao/index_newton.html">Newton</a></li>
+                                        <li><a href="explicacao/index_Bissecao.html">Pegásos</a></li>
+                                        <li><a href="explicacao/index_RegulaFalsi.html">Regula Falsi</a></li>
+                                        <li><a href="explicacao/index_Secante.html">Secante</a></li>
+                                        <li><a href="explicacao/index_Bissecao.html">Troca Sinal</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="explicacao/portfolio.html">Portfolio</a></li>
+                                <li><a href="explicacao/blog.html">Equipe</a></li>
+                                <li><a href="explicacao/contact.html">Ajuda</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <a class="navbar-brand" href="explicacao/index.html"><span>Algoritmo Muller<span></a>
+            <br><br><br><br><br>
+            <p align="center">
+            <body>
+                <div id="formulario">
+                    <form id="dados_entrada">
+                        <hr />
+                        &emsp;Limite inferior: <input type="text" id="limiteInferior"/><br><br>
+                        &emsp;Limite superior: <input type="text" id="limiteSuperior"/><br><br>
+                        &emsp;Tolerância: <input type="text" id="toler"/><br><br>
+                        &emsp;Iterações: <input type="text" id="iterMax"/><br><br>
 
-                        <h1>Metodo Muller</h1>
-                        <form id="formMuller" action="" method="POST">
+                        <input type="button" id="buttonMuller" value="Avaliar" onclick="AvaliarMuller()"/><br><br>
+                    </form>
+                    <form id="textoresultado">
+                        <div id="valoresultado"></div>
+                    </form>
+                    <form id="dados_entrada" action = "index.html">
+                        <input type="submit" value = "Voltar ao início">
+                    </form>
 
-                            <p>Limite inferior:
-                                <input type="text" id="limiteInferior"/>
-                            </p>
-                            <p>Limite superior:
-                                <input type="text" id="limiteSuperior"/>
-                            </p>
-                            <p>Tolerância:
-                                <input type="text" id="toler"/>
-                            </p>
-                            <p>Iterações:
-                                <input type="text" id="iterMax"/>
-                            </p>
-                            <p>
-                                <input type="button" id="buttonMuller" value="Muller" onclick="init()"/>
-                            </p>
-                            <p>Raiz: 
-                                <input type="text" name="raiz" id="raiz" readonly="readonly" />
-                            </p>
-                            <p>Total Iterações: 
-                                <input type="text" name="iter" id="iter" readonly="readonly" />
-                            </p>
-                            <p>CondErro: 
-                                <input type="text" name="condErro" id="condErro" readonly="readonly" />
-                            </p>
-
-                        </form>
-                    </div> <!-- close_content_container -->
-                </div> <!-- close_content_frame -->
-            </div> <!--  close_page_container -->
-        </div> <!--  close_site_container -->
-        <!--        <script type="text/javascript" src="javascript/muller.js"></script>-->
-    </body>
+                </div>
+            </div>
+        </body>
 </html>

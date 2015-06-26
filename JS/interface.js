@@ -108,57 +108,10 @@ function imprimirResultadoLR(grau, coefFunc, l) {
     }
     document.write("]");
 }
-function salvar(){
-	regularizaTabelas();
-	
-	var coeficientesdafuncao = [];
-	
-	for(var i = 0 ; i <=this.grau ; i++) {
-		coeficientesdafuncao[i] = document.getElementById("x"+(i)).value;
-	}
-	salvarArquivo("entradas.csv", coeficientesdafuncao);
-}
 
-function salvarArquivo(filename, coeficientesdafuncao) {
-	var csvFile = "v,"+this.grau+"/n";
-	csvFile += "x,"+document.getElementById("grau").value+"/n/n";
-	csvFile += "z";
-	for (var i = 0; i < coeficientesdafuncao.length; i++) {
-		csvFile += ","+coeficientesdafuncao[i];
-	}
-	csvFile += "/n";
-//	for (var i = 0; i < restricoes.length; i++) {
-//		csvFile += String.fromCharCode(97 + i);
-//		for (var j = 0; j < restricoes[i].length; j++) {
-//			csvFile += ","+restricoes[i][j];
-//		}
-//		csvFile += ","+relacoes[i];
-//		csvFile += ","+ladoDireito[i]+"/n";
-//	}
-
-	var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;'});
-	if (navigator.msSaveBlob) { // IE 10+
-		navigator.msSaveBlob(blob, filename);
-	} else {
-		var link = document.createElement("a");
-		if (link.download !== undefined) { // feature detection
-			// Browsers that support HTML5 download attribute
-			var url = URL.createObjectURL(blob);
-			link.setAttribute("href", url);
-			link.setAttribute("download", filename);
-			link.style = "visibility:hidden";
-			document.body.appendChild(link);
-			link.click();
-			document.body.removeChild(link);
-		}
-	}
-}
-function regularizaTabelas(){
-	for(var i = 0 ; i <= this.grau ; i++) {
-		var field = document.getElementById("x"+(i));
-		if (field.value === '') {
-			field.value = 0;
-		}
-	}
+function imprimirResultado(raiz, iter, condErro) {
+    for (var i = 0; i < iter.length; i++) {
+        document.write(iter[i] + "\t");
+    }
 }
 ;
