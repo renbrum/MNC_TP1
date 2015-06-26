@@ -8,11 +8,7 @@ function f(x) {
 }
 
 function AlgoritmoMuller(a, c, toler, iterMax) {
-//      Validações dos campos e preparação inicial...
-//	a = parseFloat(this.limiteInferior.value);
-//	c = parseFloat(this.limiteSuperior.value);
-//	toler = parseFloat(this.toler.value);
-//	iterMax = parseFloat(this.iterMax.value);
+
     a = parseFloat(a);
     c = parseFloat(c);
     toler = parseFloat(toler);
@@ -96,10 +92,11 @@ function sinal(x) {
         return -1;
     }
 }
-;
+
 
 function imprimirSaida(raiz, iter, condErro) {
     document.write("\nRaiz: "+raiz+"\n");
     document.write("\nIteracao: "+iter+"\n");
     document.write("\nCondicao Erro: "+condErro+"\n");
 }
+;
