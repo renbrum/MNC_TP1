@@ -1,14 +1,84 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+<title>Algoritmo de Newton</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="http://bootstraptaste.com" />
+<!-- css -->
+<link href="moderna/css/bootstrap.min.css" rel="stylesheet" />
+<link href="moderna/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="moderna/css/jcarousel.css" rel="stylesheet" />
+<link href="moderna/css/flexslider.css" rel="stylesheet" />
+<link href="moderna/css/style.css" rel="stylesheet" />
 
-
-    <meta charset="UTF-8">
-    <title>Grupo 6 - MNC</title>
-    <script src="JS/LerDados.js"></script>
+            <script src="JS/LerDados.js"></script>
     <script src="JS/AlgoritmoHorner.js"></script>
     <script src="JS/interface.js"></script>
     <link rel="stylesheet" href="CSS/estilo.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="moderna/css/modal.css">
+
+        
+        
+<!-- Theme skin -->
+<link href="moderna/skins/default.css" rel="stylesheet" />
+<style type="text/css">
+#wrapper table tr td p {
+	color: #000;
+}
+</style>
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div id="wrapper">
+	<!-- start header -->
+	<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><span>mnc</span> - capítulo 6</a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Algoritmos <b class=" icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="explicacao/index_Bissecao.html">Bisseção</a></li>
+                                <li><a href="explicacao/index_DekkerBrent.html">van Wijngaarden-Dekker-Brent</a></li>
+				<li><a href="explicacao/index_Horner.html">Horner</a></li>
+                                <li><a href="explicacao/index_LimiteRaizes.html">Limite das Raizes</a></li>
+                                <li><a href="explicacao/index_Muller.html">Muller</a></li>
+				<li><a href="explicacao/index_newton.html">Newton</a></li>
+                                <li><a href="explicacao/index_Bissecao.html">Pegásos</a></li>
+                                <li><a href="explicacao/index_RegulaFalsi.html">Regula Falsi</a></li>
+                                <li><a href="explicacao/index_Secante.html">Secante</a></li>
+                                <li><a href="explicacao/index_Bissecao.html">Troca Sinal</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="explicacao/portfolio.html">Portfolio</a></li>
+                        <li><a href="explicacao/blog.html">Equipe</a></li>
+                        <li><a href="explicacao/contact.html">Ajuda</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header>
+    
+
     <body>
         <div id="page_area">
             <div id="texto">
@@ -18,8 +88,8 @@
             </div>  
             <div id="formulario">
                 <form id="dados_entrada">
-                    <input type="file" id="fileUpload" />
-                    <input type="button" id="upload" value="Upload" onclick="Upload()" /> 
+                    <!-- <input type="file" id="fileUpload" />
+                        <input type="button" id="upload" value="Upload" onclick="Upload()" /> -->
                     <hr />
 
                     <!-- &emsp;Sentido: <select id="oti_combobox">
@@ -29,18 +99,18 @@
 
                     &emsp;Grau: <input id="grau" type="number" min="0" max="10" step="1" value="5"/>
                     &emsp;Ponto: <input id="ponto" type="number" min="0" max="10" step="1" value="2"/>
-                    &emsp;<input id="botaoGerarFuncao" type="button" value="Gerar Função" onclick="gerarFuncao()"/>
-                    &emsp;<input id="botaoRemoverFuncao" type="button" value="Remover Função" onclick="removerFuncao()" disabled/>
-
+                    &emsp;<input id="botaoGerarFuncao" type="button" value="Gerar Função" onClick="gerarFuncao()"/>
+                    &emsp;<input id="botaoRemoverFuncao" type="button" value="Remover Função" onClick="removerFuncao()" disabled/>
+                    
                     <!-- &emsp;<input id="botaoSalvarArquivo" type="button" value="Salvar Tabelas de Entrada" onclick="salvar()" disabled/><br><br> -->
                     <table id="tabela_coeficientes">
                     </table>
                     <br>
 
-                    <input id="botaoAvaliar" value="Avaliar" type="button" onclick="Avaliar()" />
+                    <input id="botaoAvaliar" value="Avaliar" type="button" onClick="Avaliar()" />
                 </form>
                 <form id="textoresultado">
-                    <div id="valoresultado"></div>
+                <div id="valoresultado"></div>
                 </form>
                 <form id="dados_entrada" action = "index.html">
                     <input type="submit" value = "Voltar ao início">

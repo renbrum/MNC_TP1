@@ -70,10 +70,10 @@
         </div>
 	</header>
 	<!-- end header -->
-     <a class="navbar-brand" href="index.html"><span>Algoritmo de Horner</span></a>
+     <a class="navbar-brand" href="index.html"><span>Algoritmo Limite das Raízes</span></a>
      <br><br><br><br><br>
      <p align="center">
-     <a class="but" href="../index_Horner.html">
+     <a class="but" href="../index_LimiteRaizes.html">
 	<button class="but">Resolver Algoritmo</button></a></p>
      
   <table>
@@ -81,27 +81,20 @@
         	<td width="280"></td>
             <td width="797"><p align="justify">
                        
-             Em análise numérica, o esquema de Horner (também conhecido como algoritmo de Horner, método de Horner ou, ainda, multiplicação alinhada), em homenagem a William George Horner, é um algoritmo eficiente para a avaliação dos polinômios na forma monômial. O método de Horner descreve um processo manual, através da qual pode-se aproximar as raízes de uma equação polinomial. O esquema de Horner também pode ser visto como um algoritmo rápido para dividir um polinômio por um polinômio linear com a regra de Ruffini.
-             <br>
-             O algoritmo possui esse nome devido ao trabalho "A new method of solving numerical equations of all orders" do matemático inglês William George Horner publicado em 1819 na "Philosophical Transactions of the Royal Society". Porém, o conhecimento do método é muito mais antigo. Fontes históricas indicam que ele já era utilizado por:
-<br><p align="center">
+            Um algoritmo de para encontrar raízes é um método numérico para encontrar um valor de x tal que f ( x) = 0 , para uma dada função f . Tal x é chamado de raiz da função f . Este artigo está voltado para encontrar raízes escalares, reais ou complexas , aproximadas por números de ponto flutuante . Encontrar raízes inteiras ou raízes algébricas exatas são problemas distintos , cujos algoritmos têm pouco em comum com aqueles discutidos aqui.<br><br>
 
+Encontrar uma raiz de f(x) − g(x) = 0 é o mesmo que resolver a equação f(x) = g(x). Aqui, x é chamada de desconhecida na equação. Por outro lado, qualquer equação pode tomar a forma canônica f(x) = 0. Então resolver uma equação é a mesma coisa que encontrar uma raiz de uma função.<br><br>
 
-Paolo Ruffini em 1809;<br>
-Isaac Newton em 1969;<br>
-Zhu Shijie (matemático chinês) no século XIV;<br>
-Qin Jiushao (matemático chinês) no século XIII;<br>
-Sharaf al-Dīn al-Tūsī (matemático persa) no século XII;<br>
-Jian Xian (matemático chinês) no século XI;</p><br>
+Métodos para encontrar as raízes numéricas utilizam iteração, produzindo uma sequência de números que esperamos que convirjam no sentido de um limite ( o chamado " ponto fixo " ), que é uma raiz. Os primeiros valores desta série são estimativas . O método calcula os valores subseqüentes com base nos antigos e na função f em estudo.<br><br>
+
+O comportamento de algoritmos para encontrar raízes é estudado em análise numérica . Algoritmos funcionam melhor quando eles se utilizam características conhecidas da função dada . Então, um algoritmo para encontrar raízes reais isoladas de um polinômio de baixo grau em uma variável podem ter pouca semelhança com um algoritmo para as raízes complexas de uma função de " caixa-preta ", que nem sequer é conhecido por ser diferenciável . Os pontos de discussão a respeito do método variam e incluem capacidade de separar as raízes próximas, robustez em conseguir respostas confiáveis ​​ apesar de erros numéricos inevitáveis ​​, e taxa de convergência .<br><br>
 
 onde n indica a n-ésima iteração do algoritmo e f'(xn) é a derivada da função f em xn.
 
 Para que se obtenha sucesso na iteração, devemos respeitar a seguinte condição:
 
 A função f deve ser diferenciável em xn e seu valor deve ser não nulo.
-<p align="center">
-  <img src="../moderna/img/horner-1.jpg" width="797"></p><br>
-  <img src="../moderna/img/horner-2.jpg" width="797"></p></td>
+</td>
 <td width="235"></td>
 			</tr>
        </table>

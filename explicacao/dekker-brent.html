@@ -51,10 +51,10 @@
                             <ul class="dropdown-menu">
                                 <li><a href="../index_Bissecao.html">Bisseção</a></li>
                                 <li><a href="../index_DekkerBrent.html">van Wijngaarden-Dekker-Brent</a></li>
-								<li><a href="../index_Horner.html">Horner</a></li>
+				<li><a href="index_Horner.html">Horner</a></li>
                                 <li><a href="../index_LimiteRaizes.html">Limite das Raizes</a></li>
                                 <li><a href="../index_Muller.html">Muller</a></li>
-								<li><a href="../index_newton.html">Newton</a></li>
+				<li><a href="index_newton.html">Newton</a></li>
                                 <li><a href="../index_Bissecao.html">Pegásos</a></li>
                                 <li><a href="../index_RegulaFalsi.html">Regula Falsi</a></li>
                                 <li><a href="../index_Secante.html">Secante</a></li>
@@ -70,10 +70,10 @@
         </div>
 	</header>
 	<!-- end header -->
-     <a class="navbar-brand" href="index.html"><span>Algoritmo de Horner</span></a>
+     <a class="navbar-brand" href="index.html"><span>Algoritmo de van Wijngaarden-Dekker-Brent</span></a>
      <br><br><br><br><br>
      <p align="center">
-     <a class="but" href="../index_Horner.html">
+     <a class="but" href="../index_DekkerBrent.html">
 	<button class="but">Resolver Algoritmo</button></a></p>
      
   <table>
@@ -81,27 +81,32 @@
         	<td width="280"></td>
             <td width="797"><p align="justify">
                        
-             Em análise numérica, o esquema de Horner (também conhecido como algoritmo de Horner, método de Horner ou, ainda, multiplicação alinhada), em homenagem a William George Horner, é um algoritmo eficiente para a avaliação dos polinômios na forma monômial. O método de Horner descreve um processo manual, através da qual pode-se aproximar as raízes de uma equação polinomial. O esquema de Horner também pode ser visto como um algoritmo rápido para dividir um polinômio por um polinômio linear com a regra de Ruffini.
-             <br>
-             O algoritmo possui esse nome devido ao trabalho "A new method of solving numerical equations of all orders" do matemático inglês William George Horner publicado em 1819 na "Philosophical Transactions of the Royal Society". Porém, o conhecimento do método é muito mais antigo. Fontes históricas indicam que ele já era utilizado por:
+            O método de Van
+Wijngaarden-Dekker-Brent constitui um refinamento feito por Richard Brent (1973)
+em um algoritmo originalmente concebido por Dekker (1969). Trata-se de um
+método de três pontos que se fundamenta na combinação dos métodos da
+bisseção, secante e interpolação quadrática inversa calculada sobre as ordenadas
+dos três últimos pontos disponíveis. Usa-se o método Quadrático e, se o resultado
+for um ponto fora do intervalo, usa-se o método da Secante. <br><br>
+
+Se este também tiver como resultado um ponto fora do intervalo, usa-se o método da Bisseção, o qual 31
+também exerce um controle sobre a velocidade real de convergência, se os métodos utilizados convergirem muito lentamente.
+Assim, o método de Van Wijngaarden-Dekker-Brent caracteriza-se por ser bastante eficiente e de convergência garantida, sendo então recomendado como sendo o mais adequado para o cálculo do zero de uma função de uma variável
+quando sua derivada não estiver disponível.<br><br>
+
+O teste Miller-Rabin (por Gary Miller e Michael Rabin) é um teste probabilistico da primitividade de um dado número n. Se um número n não passar pelo teste, n com certeza é um número composto (ou seja, não-primo). Se o número passar no teste, ele é primo, com uma probabilidade P(n E P) >= 0,75, sendo que P denomina o conjunto de todos números primos.<br>
+
+A margem de erro pode ser diminuida aleatoriamente, aplicando-se o teste várias vezes ao mesmo número n.<br><br>
+
+O teste é parecido com o teste Solovay-Strassen, portanto sua margem de erro é bem menor.<br><br>
+
+A importância desse algoritmo se deve à criptografia assimétrica, onde a necessidade de uma grande quantidade de números primos grandes é vital para a segurança dos algoritmos. Tais números são tão grandes que testes não probabilisticos como o da simples divisão por números primos menores que o número gerado ou o tabelamento de todos os números primos são impraticáveis.<br>
+
+É importante dizer que o teste Miller-Rabin, ou Rabin-Miller como as vezes também é chamado, não dá indícios sobre a fatorização no número n. Devido suas caraterísticas, esse teste é o mais utilizado para o teste da primalidade.<br><br>
 <br><p align="center">
 
 
-Paolo Ruffini em 1809;<br>
-Isaac Newton em 1969;<br>
-Zhu Shijie (matemático chinês) no século XIV;<br>
-Qin Jiushao (matemático chinês) no século XIII;<br>
-Sharaf al-Dīn al-Tūsī (matemático persa) no século XII;<br>
-Jian Xian (matemático chinês) no século XI;</p><br>
-
-onde n indica a n-ésima iteração do algoritmo e f'(xn) é a derivada da função f em xn.
-
-Para que se obtenha sucesso na iteração, devemos respeitar a seguinte condição:
-
-A função f deve ser diferenciável em xn e seu valor deve ser não nulo.
-<p align="center">
-  <img src="../moderna/img/horner-1.jpg" width="797"></p><br>
-  <img src="../moderna/img/horner-2.jpg" width="797"></p></td>
+<br></p></td>
 <td width="235"></td>
 			</tr>
        </table>

@@ -49,11 +49,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="explicacao/index.html"><span>mnc</span> - capítulo 6</a>
+                    <a class="navbar-brand" href="index.html"><span>mnc</span> - capítulo 6</a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="explicacao/index.html">Home</a></li>
+                        <li class="active"><a href="index.html">Home</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Algoritmos <b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
@@ -80,32 +80,8 @@
 	<!-- end header -->
      <a class="navbar-brand" href="explicacao/index.html"><span>Algoritmo de Newton</span> - Avaliar um polinomio de grau n no ponto a</a>
      
-     <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+     
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Solução do Algoritmo</h4>
-      </div>
-      <div class="modal-body">
-        <p>
-        <table id="tabela_resultados" align="center">
-                    </table>
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
 
      <br><br><br><br><br>
      <p align="center">
@@ -117,18 +93,20 @@
     	<tr>
         	<td></td>
             <td>Grau: <input id="grau" type="number" min="0" max="10" step="1" value="2"/></td>
+            <td width="20"></td>
             <td><input id="botaoGerarFuncao" type="button" value="Gerar Função" onClick="gerarFuncao()"/></td>
             <td><input id="botaoRemoverFuncao" type="button" value="Remover Função" onClick="removerFuncao()" disabled/></td>
 		</tr>
-        <tr height="30"></tr>
+        <tr height="15"></tr>
         </table>
         <table id="tabela_coeficientes" align="center">
                     </table>
     <table align="center">
-        <tr height="50"></tr>
+        <tr height="15"></tr>
         <tr>
         	<td></td>
             <td>Valor x0 : <input id="x0" type="number" min="0" max="10" step="1" value="0"/></td>
+            <td width="20"></td>
 			<td>Intervalo: De <input id="inter_min" type="number" min="0" max="10" step="1" value="0"/></td>
             <td>à <input id="inter_max" type="number" min="0" max="10" step="1" value="0"/></td>
          </tr>
