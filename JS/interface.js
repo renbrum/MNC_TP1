@@ -70,6 +70,13 @@ function addColunaCoef(i, linhaTabela) {
     }
 }
 
+function gerarTabelas(){
+	atualizarCampos();
+	esvaziarTabelas();
+	desativarCamposIniciais();
+	inicializarTabelaVar(this.grau);
+}
+
 
 function removerFuncao() {
     if (confirm("Tem certeza de que deseja remover as tabelas? Quaisquer dados inseridos não salvos serão perdidos.")) {
@@ -104,52 +111,30 @@ function imprimirResultadoLR(grau, coefFunc, l) {
 function salvar(){
 	regularizaTabelas();
 	
-	var variaveis = [];
-	var restricoes = [];
-	for(var i = 0 ; i < numberOfRestrictions ; i++) {
-		restricoes[i] = [];
-	}
-	var relacoes = [];
-	var ladoDireito = [];
+	var coeficientesdafuncao = [];
 	
-	for(var i = 0 ; i < numberOfVariables ; i++) {
-		variaveis[i] = document.getElementById("x"+(i+1)).value;
+	for(var i = 0 ; i <=this.grau ; i++) {
+		coeficientesdafuncao[i] = document.getElementById("x"+(i)).value;
 	}
-	for(var i = 0 ; i < numberOfRestrictions ; i++) {
-		for(var j = 0 ; j < numberOfVariables ; j++) {
-			restricoes[i][j] = document.getElementById("r"+(i+1)+"x"+(j+1)).value;
-		}
-		var relacao = document.getElementById("r"+(i+1)+"relacao").value;
-		if (relacao == 0) {
-			relacoes[i] = "<";
-		} else if (relacao == 1) {
-			relacoes[i] = "=";
-		} else {
-			relacoes[i] = ">";
-		}
-		ladoDireito[i] = document.getElementById("r"+(i+1)+"ladoDireito").value;
-	}
-	salvarArquivo("entradas.csv", variaveis, restricoes, relacoes, ladoDireito);
-	teste = restricoes;
+	salvarArquivo("entradas.csv", coeficientesdafuncao);
 }
 
-function salvarArquivo(filename, variaveis, restricoes, relacoes, ladoDireito) {
-	var csvFile = "v,"+numberOfVariables+"/n";
-	csvFile += "r,"+numberOfRestrictions+"/n";
-	csvFile += "x,"+document.getElementById("oti_combobox").value+"/n/n";
+function salvarArquivo(filename, coeficientesdafuncao) {
+	var csvFile = "v,"+this.grau+"/n";
+	csvFile += "x,"+document.getElementById("grau").value+"/n/n";
 	csvFile += "z";
-	for (var i = 0; i < variaveis.length; i++) {
-		csvFile += ","+variaveis[i];
+	for (var i = 0; i < coeficientesdafuncao.length; i++) {
+		csvFile += ","+coeficientesdafuncao[i];
 	}
-	csvFile += "/n"
-	for (var i = 0; i < restricoes.length; i++) {
-		csvFile += String.fromCharCode(97 + i);
-		for (var j = 0; j < restricoes[i].length; j++) {
-			csvFile += ","+restricoes[i][j];
-		}
-		csvFile += ","+relacoes[i];
-		csvFile += ","+ladoDireito[i]+"/n";
-	}
+	csvFile += "/n";
+//	for (var i = 0; i < restricoes.length; i++) {
+//		csvFile += String.fromCharCode(97 + i);
+//		for (var j = 0; j < restricoes[i].length; j++) {
+//			csvFile += ","+restricoes[i][j];
+//		}
+//		csvFile += ","+relacoes[i];
+//		csvFile += ","+ladoDireito[i]+"/n";
+//	}
 
 	var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;'});
 	if (navigator.msSaveBlob) { // IE 10+
@@ -169,21 +154,9 @@ function salvarArquivo(filename, variaveis, restricoes, relacoes, ladoDireito) {
 	}
 }
 function regularizaTabelas(){
-	for(var i = 0 ; i < numberOfVariables ; i++) {
-		var field = document.getElementById("x"+(i+1));
-		if (field.value == '') {
-			field.value = 0;
-		}
-	}
-	for(var i = 0 ; i < numberOfRestrictions ; i++) {
-		for(var j = 0 ; j < numberOfVariables ; j++) {
-			var field = document.getElementById("r"+(i+1)+"x"+(j+1));
-			if (field.value == '') {
-				field.value = 0;
-			}
-		}
-		field = document.getElementById("r"+(i+1)+"ladoDireito");
-		if (field.value == '') {
+	for(var i = 0 ; i <= this.grau ; i++) {
+		var field = document.getElementById("x"+(i));
+		if (field.value === '') {
 			field.value = 0;
 		}
 	}

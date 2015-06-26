@@ -1,17 +1,12 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-       <meta charset="UTF-8">
+        <meta charset="UTF-8">
         <title>Grupo 6 - MNC</title>
         <script src="JS/LerDadosPegaso.js"></script>        
         <script src="JS/interfacePegaso.js"></script>
         <link rel="stylesheet" href="CSS/estilo.css">
-        
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -19,7 +14,7 @@ and open the template in the editor.
         <div id="page_area">
             <div id="texto">
                 <p id="p1">Algoritmo de Pégaso</p>
-                           
+
             </div>  
             <div id="formulario">
                 <form id="dados_entrada">
@@ -34,22 +29,22 @@ and open the template in the editor.
 
                     &emsp;Grau: <input id="grau" type="number" min="0" max="10" step="1" value="2"/>
                     &emsp;Intervalo A: <input id="intervalo1" type="number" min="-10" max="10" step="1" value="0"/>
-                     &emsp;Intervalo B: <input id="intervalo2" type="number" min="0" max="10" step="1" value="0"/>
-                      &emsp;Toler: <input id="Toler" type="number" min="0" max="1"  value="0"/>
-                       &emsp;Max Iter: <input id="iterMax" type="number" min="0" max="100" step="1" value="0"/>
+                    &emsp;Intervalo B: <input id="intervalo2" type="number" min="0" max="10" step="1" value="0"/>
+                    &emsp;Toler: <input id="Toler" type="number" min="0" max="1"  value="0"/>
+                    &emsp;Max Iter: <input id="iterMax" type="number" min="0" max="100" step="1" value="0"/>
                     &emsp;<input id="botaoGerarFuncao" type="button" value="Gerar Função" onclick="gerarFuncao()"/>    
-                   
-                     
+
+
                     &emsp;<input id="botaoRemoverFuncao" type="button" value="Remover Função" onclick="removerFuncao()" disabled/>
                     <!-- &emsp;<input id="botaoSalvarArquivo" type="button" value="Salvar Tabelas de Entrada" onclick="salvar()" disabled/><br><br> -->
                     <table id="tabela_coeficientes">
                     </table>
-                  <br>
+                    <br>
 
                     <input id="botaoAvaliar" value="Avaliar" type="button" onclick="Avaliar()" />
                 </form>
                 <form id="textoresultado">
-                <div id="valoresultado"> </div>
+                    <div id="valoresultado"> </div>
                 </form>
                 <form  action = "index.html">
                     <input type="submit" value = "Voltar ao início">
