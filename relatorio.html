@@ -1,57 +1,44 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-
-        <meta charset="utf-8">
-        <title>Algoritmo de Newton</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="" />
-        <meta name="author" content="http://bootstraptaste.com" />
-        <!-- css -->
-        <link href="moderna/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="moderna/css/fancybox/jquery.fancybox.css" rel="stylesheet">
-        <link href="moderna/css/jcarousel.css" rel="stylesheet" />
-        <link href="moderna/css/flexslider.css" rel="stylesheet" />
-        <link href="moderna/css/style.css" rel="stylesheet" />
-
-        <script src="JS/interface.js"></script>
-        <script src="JS/AlgoritmoNewton.js"></script>
-        <script src="JS/LerDados.js"></script>
-        <link rel="stylesheet" href="estilo.css"></link>
-
-        <link rel="stylesheet" type="text/css" href="moderna/css/modal.css">
+<head>
+    
+<meta charset="utf-8">
+<title>Trabalho de MNC - Capítulo 6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="http://bootstraptaste.com" />
+<!-- css -->
+<link href="moderna/css/bootstrap.min.css" rel="stylesheet" />
+<link href="moderna/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="moderna/css/jcarousel.css" rel="stylesheet" />
+<link href="moderna/css/flexslider.css" rel="stylesheet" />
+<link href="moderna/css/style.css" rel="stylesheet" />
 
 
+<!-- Theme skin -->
+<link href="moderna/skins/default.css" rel="stylesheet" />
 
-        <!-- Theme skin -->
-        <link href="moderna/skins/default.css" rel="stylesheet" />
-        <style type="text/css">
-            #wrapper table tr td p {
-                color: #000;
-            }
-        </style>
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-              <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-            <![endif]-->
-
-    </head>
-    <body>
-        <div id="wrapper">
-            <!-- start header -->
-            <header>
-                <div class="navbar navbar-default navbar-static-top">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="index.html"><span>mnc</span> - capítulo 6</a>
-                        </div>
-                        <div class="navbar-collapse collapse ">
+</head>
+<body>
+<div id="wrapper">
+	<!-- start header -->
+	<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><span>mnc</span> - capítulo 6</a>
+                </div>
+                <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Home</a></li>
                         <li class="dropdown">
@@ -59,10 +46,10 @@
                             <ul class="dropdown-menu">
                                 <li><a href="index_Bissecao.html">Bisseção</a></li>
                                 <li><a href="index_DekkerBrent.html">van Wijngaarden-Dekker-Brent</a></li>
-                                <li><a href="index_Horner.html">Horner</a></li>
+								<li><a href="index_Horner.html">Horner</a></li>
                                 <li><a href="index_LimiteRaizes.html">Limite das Raizes</a></li>
                                 <li><a href="index_Muller.html">Muller</a></li>
-				<li><a href="index_newton.html">Newton</a></li>
+								<li><a href="index_newton.html">Newton</a></li>
                                 <li><a href="index_Bissecao.html">Pegásos</a></li>
                                 <li><a href="index_RegulaFalsi.html">Regula Falsi</a></li>
                                 <li><a href="index_Secante.html">Secante</a></li>
@@ -76,65 +63,54 @@
                         	<ul class="dropdown-menu">
                                 <li><a href="ajuda/bissecao.html">Bisseção</a></li>
                                 <li><a href="ajuda/dekkerbrent.html">van Wijngaarden-Dekker-Brent</a></li>
-                                <li><a href="ajuda/horner.html">Horner</a></li>
+								<li><a href="ajuda/horner.html">Horner</a></li>
                                 <li><a href="ajuda/limitedasraizes.html">Limite das Raizes</a></li>
                                 <li><a href="ajuda/muller.html">Muller</a></li>
-				<li><a href="ajuda/newton.html">Newton</a></li>
+								<li><a href="ajuda/newton.html">Newton</a></li>
                                 <li><a href="ajuda/pegaos.html">Pegásos</a></li>
                                 <li><a href="ajuda/regulafalsi.html">Regula Falsi</a></li>
                                 <li><a href="ajuda/secante.html">Secante</a></li>
                                 <li><a href="ajuda/trocasinal.html">Troca Sinal</a></li>
                             </ul>
                     </ul>
-                        </div>
-                    </div>
                 </div>
-            </header>
-            <!-- end header -->
-            <a class="navbar-brand" href="explicacao/index.html"><span>Algoritmo de Newton</span> - Avaliar um polinomio de grau n no ponto a</a>
+            </div>
+        </div>
+	</header>
+    <br><br>
+    <a class="navbar-brand" href="explicacao/index.html"><span>Relatório do Trabalho<span></a>
+                <br><br><br><br>
+    <table>
+    	<tr>
+        	<td width="300"></td>
+            <td align="justify">O desenvolvimento do trabalho em questão foi feito em JavaScript e HTML5. Utilizou-se a ferramenta NetBeans IDE 8.0.1 para o desenvolvimento dos algoritmos referentes ao Capítulo 6 do livro “Algoritmos Numéricos, Frederico Ferreira Campos. 2ªEdição“ . Quanto a distribuição das atividades, fez-se da seguinte forma:
 
+                Bruno Araújo ficou responsável pela criação do template e dos algoritmos de Newton e Dekker-Brent. <br><br>  
 
+Rodrigo Silva ficou responsável pela criação dos algoritmos da Bisseção e da Secante, pela elaboração da apresentação e do relatório.<br><br>
 
+Lorena Campos ficou responsável pela criação dos algoritmos RegulaFalsi e Pégaso, pela elaboração da apresentação e do relatório.<br><br>
 
-            <br><br><br><br><br>
-            <p align="center">
+Lucas Bourguignon ficou responsável pela criação do algoritmo Troca de Sinal.<br><br>
 
+Guilherme Spadotto ficou responsável pela criação do algoritmo de Muller.<br><br>
 
-            <div id="formulario">  
-                <form id="dados_entrada">     
-                    <table align="center">
-                        <tr>
-                            <td></td>
-                            <td>Grau: <input id="grau" type="number" min="0" max="10" step="1" value="2"/></td>
-                            <td width="20"></td>
-                            <td><input id="botaoGerarFuncao" type="button" value="Gerar Função" onClick="gerarFuncao()"/></td>
-                            <td><input id="botaoRemoverFuncao" type="button" value="Remover Função" onClick="removerFuncao()" disabled/></td>
-                        </tr>
-                        <tr height="15"></tr>
-                    </table>
-                    <table id="tabela_coeficientes" align="center">
-                    </table>
-                    <table align="center">
-                        <tr height="15"></tr>
-                        <tr>
-                            <td></td>
-                            <td>Valor x0 : <input id="x0" type="number" min="0" max="10" step="1" value="0"/></td>
-                            <td width="20"></td>
-                            <td>Tolerância: <input id="inter_min" type="number" min="0" max="10" step="1" value="0"/></td>
-                            <td>Qtd de Interações:<input id="inter_max" type="number" min="0" max="10" step="1" value="0"/></td>
-                        </tr>
-                        <tr height="50"></tr>
-                        <tr>
-                            <td ></td>
+Renan Brum ficou responsável pela criação dos algoritmos de Horner e LimiteRaízes.<br><br>
 
-                            <td><input id="botaoAvaliar" value="Avaliar" type="button" onClick="AvaliarNewton()" /></td>
-                            <td></td>
-                        </tr>
-                    </table>
+A template utilizada foi Bootstrap.<br><br>
 
-                </form>
+Apesar de cada integrante ter ficado responsável por alguns algoritmos houve cooperação e integração dos mesmos. <br><br>
 
-                <footer>
+Referência Bibliográfica: Algoritmos Numéricos, Frederico Ferreira Campos.
+
+</td>
+        	<td width="300"></td>
+        </tr>
+    </table>
+    
+    
+      <br><br><br><br>
+    	<footer>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">
@@ -210,22 +186,21 @@
 		</div>
 	</div>
 	</footer>
-        
-        
-        <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-    <!-- javascript
-        ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="moderna/js/jquery.js"></script>
-    <script src="moderna/js/jquery.easing.1.3.js"></script>
-    <script src="moderna/js/bootstrap.min.js"></script>
-    <script src="moderna/js/jquery.fancybox.pack.js"></script>
-    <script src="moderna/js/jquery.fancybox-media.js"></script>
-    <script src="moderna/js/google-code-prettify/prettify.js"></script>
-    <script src="moderna/js/portfolio/jquery.quicksand.js"></script>
-    <script src="moderna/js/portfolio/setting.js"></script>
-    <script src="moderna/js/jquery.flexslider.js"></script>
-    <script src="moderna/js/animate.js"></script>
-    <script src="moderna/js/custom.js"></script>
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="moderna/js/jquery.js"></script>
+<script src="moderna/js/jquery.easing.1.3.js"></script>
+<script src="moderna/js/bootstrap.min.js"></script>
+<script src="moderna/js/jquery.fancybox.pack.js"></script>
+<script src="moderna/js/jquery.fancybox-media.js"></script>
+<script src="moderna/js/google-code-prettify/prettify.js"></script>
+<script src="moderna/js/portfolio/jquery.quicksand.js"></script>
+<script src="moderna/js/portfolio/setting.js"></script>
+<script src="moderna/js/jquery.flexslider.js"></script>
+<script src="moderna/js/animate.js"></script>
+<script src="moderna/js/custom.js"></script>
 </body>
 </html>

@@ -79,14 +79,23 @@ function AvaliarLR() {
 
 function AvaliarNewton() {
 //    Setando Dados
-    this.x0 = 8;
-    this.grau = 5;
-    this.coefFuncNewton = [1, -14, 30, 236, -511,-1470];
-    this.IterMax = 8;
-//    L = 0.6316    4.7417  -14.0000 -0.5760
-//    var leia = new lerDadosNewton();
-//    leia;
-    Newton(this.x0, this.coefFuncNewton, this.grau);
+    
+    this.x0         = parseFloat(document.getElementById("x0").value);
+    this.grau       = parseFloat(document.getElementById("grau").value);
+    this.IterMax    = parseFloat(document.getElementById("inter_max").value);
+    this.Toler      = parseFloat(document.getElementById("inter_min").value);
+    
+    // this.coefFunc = [1, -14, 30, 236, -511,-1470];
+
+    this.coefFunc = [];
+    var cont = 1; 
+    for (var i = this.grau; i >= 0; i--) { //coefFunc começa com [1];
+         
+          
+        this.coefFunc[cont] = parseFloat(document.getElementById("x" + i).value);
+        cont++;}
+    
+    var solucao = Newton(this.x0, this.Toler, this.IterMax, this.coefFunc,this.grau);
 }
 
 function AvaliarDekkerBrent() {
