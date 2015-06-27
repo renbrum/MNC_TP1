@@ -20,7 +20,7 @@ function lerDados() {
     this.grau = parseInt(document.getElementById("grau").value);
     this.intervaloa = parseInt(document.getElementById("intervalo1").value);
     this.intervalob = parseInt(document.getElementById("intervalo2").value);
-    this.Toler = document.getElementById("Toler").value;
+    this.Toler = parseFloat(document.getElementById("Toler").value);
     this.IterMax = parseInt(document.getElementById("iterMax").value);
     this.coefFunc = [];
     var cont = 0;
@@ -77,7 +77,7 @@ function Bissecao(grau, coefFunc, a, b, Toler, IterMax) {
         do{
             x=( (a+b)/2 );
             FX=f(x, grau, coefFunc);
-            document.write("Iteração: " + Iter + " a: " + a +" FA:"+ FA + "b: " + b+ " FB:" + FB + " X: " + x+ "FX: " + FX + "DELTA X: " + DELTAX );
+            document.write("Iteração: " + Iter + " a: " + a +" FA:"+ FA + "b: " + b+ " FB:" + FB + " X: " + x+ "FX: " + FX + "DELTA X: " + DELTAX +"<br>");
             if( (FA*FX) > 0){
                 a=x;
                 FA=FX;
@@ -96,7 +96,7 @@ function Bissecao(grau, coefFunc, a, b, Toler, IterMax) {
             CondErro = 1;
         }
 
-        // document.write("Iterações:" +Iter+ "CondErro:" +CondErro);
+         document.write("Iterações:" +Iter+ "CondErro:" +CondErro);
         return Raiz;
     }
 }
