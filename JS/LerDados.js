@@ -80,10 +80,10 @@ function AvaliarLR() {
 function AvaliarNewton() {
 //    Setando Dados
     
-    this.x0         = parseFloat(document.getElementById("x0").value);
-    this.grau       = parseFloat(document.getElementById("grau").value);
-    this.IterMax    = parseFloat(document.getElementById("inter_max").value);
-    this.Toler      = parseFloat(document.getElementById("inter_min").value);
+    this.x0 = parseFloat(document.getElementById("x0").value);
+    this.grau = parseFloat(document.getElementById("grau").value);
+    this.IterMax = parseFloat(document.getElementById("inter_max").value);
+    this.Toler = parseFloat(document.getElementById("inter_min").value);
     
     // this.coefFunc = [1, -14, 30, 236, -511,-1470];
 
