@@ -20,7 +20,7 @@ function lerDados() {
     this.grau = parseInt(document.getElementById("grau").value);
     this.intervaloa = parseInt(document.getElementById("intervalo1").value);
     this.intervalob = parseInt(document.getElementById("intervalo2").value);
-    this.Toler = document.getElementById("Toler").value;
+    this.Toler = parseFloat(document.getElementById("Toler").value);
     this.IterMax = parseInt(document.getElementById("iterMax").value);
     this.coefFunc = [];
     var cont = 0;
@@ -83,12 +83,12 @@ function RegulaFalsi(grau, coefFunc, a, b, Toler, IterMax) {
         x = b;
         FX = FB;
         do {
-            DELTAX = -FX / ((FB - FA) * (b - a));
+            DELTAX = -FX / (FB - FA) * (b - a);
             x = x + DELTAX;
             FX = f(x, grau, coefFunc);
 
             //return FX;
-            document.write("Iteração: " + Iter + " a: " + a +" FA"+ FA + "b: " + b+ " FB:" + FB + " X: " + x+ "FX: " + FX + "DELTA X: " + DELTAX );
+            document.write("Iteração: " + Iter + " a: " + a +" FA"+ FA + "b: " + b+ " FB:" + FB + " X: " + x+ "FX: " + FX + "DELTA X: " + DELTAX +"<br>");
             if (FX < 0) {
                 a = x;
                 FA = FX;
@@ -99,7 +99,7 @@ function RegulaFalsi(grau, coefFunc, a, b, Toler, IterMax) {
             Iter = Iter + 1;
 
 
-        } while (((Math.abs(DELTAX) > Toler) && (Math.abs(FX) > Toler)) || (Iter < IterMax));
+        } while (((Math.abs(DELTAX) > Toler) && (Math.abs(FX) > Toler)) && (Iter < IterMax));
         Raiz = x;
 //        return x;
         if (Math.abs(DELTAX) <= Toler && Math.abs(FX) <= Toler) {
@@ -108,7 +108,7 @@ function RegulaFalsi(grau, coefFunc, a, b, Toler, IterMax) {
             CondErro = 1;
         }
 
-        // document.write("Iterações:" +Iter+ "CondErro:" +CondErro);
+         document.write("Iterações:" +Iter+ "CondErro:" +CondErro);
         return Raiz;
     }
 }

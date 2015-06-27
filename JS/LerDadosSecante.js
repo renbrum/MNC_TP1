@@ -20,7 +20,7 @@ function lerDados() {
     this.grau = parseInt(document.getElementById("grau").value);
     this.intervaloa = parseInt(document.getElementById("intervalo1").value);
     this.intervalob = parseInt(document.getElementById("intervalo2").value);
-    this.Toler = document.getElementById("Toler").value;
+    this.Toler = parseFloat(document.getElementById("Toler").value);
     this.IterMax = parseInt(document.getElementById("iterMax").value);
     this.coefFunc = [];
     var cont = 0;
@@ -81,10 +81,10 @@ function Secante(grau, coefFunc, a, b, Toler, IterMax){
     x=b;
     FX=FB;
     do{
-        DELTAX=-FX/( (FB-FA)*(b-a) );
+        DELTAX=-FX/ (FB-FA)*(b-a) ;
         x=x+DELTAX;
         FX=f(x, grau, coefFunc);
-        document.write("Iteração: " + Iter + " a: " + a +" FA"+ FA + "b: " + b+ " FB:" + FB + " x: " + x+ "FX: " + FX + "Delta X: " + DELTAX );
+        document.write("Iteração: " + Iter + " a: " + a +" FA"+ FA + "b: " + b+ " FB:" + FB + " x: " + x+ "FX: " + FX + "Delta X: " + DELTAX + "<br>" );
         a=b;
         FA=FB;
         b=x;
@@ -99,6 +99,7 @@ function Secante(grau, coefFunc, a, b, Toler, IterMax){
         else{
             CondErro=1;
         }
+        document.write("Iterações:" +Iter+ "CondErro:" +CondErro);
         return Raiz;
 }
 
