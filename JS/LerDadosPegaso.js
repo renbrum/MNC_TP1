@@ -26,7 +26,7 @@ function lerDados() {
     this.grau = parseInt(document.getElementById("grau").value);
     this.intervaloa = parseInt(document.getElementById("intervalo1").value);
     this.intervalob = parseInt(document.getElementById("intervalo2").value);
-    this.Toler = document.getElementById("Toler").value;
+    this.Toler = parseFloat(document.getElementById("Toler").value);
     this.IterMax = parseInt(document.getElementById("iterMax").value);
     this.coefFunc = [];
     var cont = 0;
@@ -72,10 +72,10 @@ function Pegaso(grau,coefFunc,a,b,Toler,IterMax){
     FB = f(b,grau,coefFunc);
     x=b; FX=FB; Iter =0;
     do{
-        DELTAX = -FX/((FB-FA)*(b-a));
+        DELTAX = -FX/(FB-FA)*(b-a);
         x=x+DELTAX;
         FX=f(x,grau,coefFunc);
-        document.write("Iter" + Iter + "A" + a +"FA"+ FA + "B" + b+ "FB" + FB + "X" + x+ "FX" + FX + "DELTA X" + DELTAX );
+        document.write("Iter" + Iter + "A" + a +"FA"+ FA + "B" + b+ "FB" + FB + "X" + x+ "FX" + FX + "DELTA X" + DELTAX +"<br>");
         if(FX*FB <0){
         a=b;
         FA=FB;
@@ -92,6 +92,8 @@ function Pegaso(grau,coefFunc,a,b,Toler,IterMax){
     if(Math.abs(DELTAX)<= Toler && Math.abs(FX)<= Toler){
         CondErro=0;       
     }else{ CondErro=1;}
+    document.write("Iterações:" +Iter+ "CondErro:" +CondErro);
+    return Raiz;
 }
 
 function f(x, grau, coefFunc) {
