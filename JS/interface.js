@@ -109,9 +109,9 @@ function imprimirResultadoLR(grau, coefFunc, l) {
     document.write("]");
 }
 
-function imprimirResultado(raiz, iter, condErro) {
-    for (var i = 0; i < iter.length; i++) {
-        document.write(iter[i] + "\t");
-    }
-}
+//function imprimirResultado(raiz, iter, condErro) {
+//    for (var i = 0; i < iter.length; i++) {
+//        document.write(iter[i] + "\t");
+//    }
+//}
 ;
